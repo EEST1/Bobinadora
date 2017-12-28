@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bobinadora: Referencia del Archivo projects/Bobinadora/src/Bobinadora.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bobinadora
+   &#160;<span id="projectnumber">v0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a9ec1ef424966475f993eb98877e3088.html">projects</a></li><li class="navelem"><a class="el" href="dir_2473f7eecb74d75af576ad8fa3914f51.html">Bobinadora</a></li><li class="navelem"><a class="el" href="dir_a4ffede9b2f07bed5a0a6879ad4c6e4b.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo Bobinadora.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;sapi.h&quot;</code><br />
+<code>#include &quot;LCD_I2C_PCF8574.h&quot;</code><br />
+</div>
+<p><a href="Bobinadora_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:aad28fddcc33bb99bff17d2c95f1ee28a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#aad28fddcc33bb99bff17d2c95f1ee28a">MAX_DIGITOS_EN_VALORES</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:aad28fddcc33bb99bff17d2c95f1ee28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab141c2f4969ddb17459e008d7062cc42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ab141c2f4969ddb17459e008d7062cc42">MAX_PULSOS_AVANCE</a>&#160;&#160;&#160;46080</td></tr>
+<tr class="separator:ab141c2f4969ddb17459e008d7062cc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf9c516001d8e5c7c9e593e5a25d249"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#aabf9c516001d8e5c7c9e593e5a25d249">DERECHA</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aabf9c516001d8e5c7c9e593e5a25d249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9ef6961fb41b000be06f50ff545f55d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ad9ef6961fb41b000be06f50ff545f55d">IZQUIERDA</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ad9ef6961fb41b000be06f50ff545f55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a3c10325a2e400a6d0cc9987638ad4a5b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5b">bob_state_t</a> { <br />
+&#160;&#160;<a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5ba9f962f8cfddf2f976ffae988c48dd7b3">MENSAJE_BIENVENIDA</a>, 
+<a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5ba399904f026dcac4eecf2a0540bb44ae3">MENU_CONFIG_GRAL</a>, 
+<a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5baa39a1780487fe7e36fdb19f626295dc7">CONTROL_VUELTAS</a>, 
+<a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5bab65857ca9606cbee5e5d80da354a85dc">REPETIR_BOBINADO</a>, 
+<br />
+&#160;&#160;<a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5bac99738da68a5ce747fbb9cc8e279fd62">SUB_MENU_CONFIG</a>
+<br />
+ }</td></tr>
+<tr class="separator:a3c10325a2e400a6d0cc9987638ad4a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2f2c1eda9e7dc0e5b32b8871f2bc53"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53">menu_config_t</a> { <br />
+&#160;&#160;<a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53a06d8faa02e79a9a6fbda9d2cd2440194">MENU_DIAMETRO_ALAMBRE</a>, 
+<a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53ab6e2020c69a0e91ebc81f83e9a38ac84">MENU_LONGITUD_CARRETE</a>, 
+<a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53aebf2dc77e049c39e1e391b6201311b5b">MENU_CANTIDAD_ESPIRAS</a>, 
+<a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53a75ecf80a9fbf9d9ecbdbd7a695206ef3">MENU_VELOCIDAD</a>, 
+<br />
+&#160;&#160;<a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53aec3bb36b53f60016711c9476c88451c6">MENU_HOME_SET_PRIMERA_ESPIRA</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7a2f2c1eda9e7dc0e5b32b8871f2bc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab0e32007633c5e09e0bcb67ea633162e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ab0e32007633c5e09e0bcb67ea633162e">BobinadoraMEFInit</a> (void)</td></tr>
+<tr class="separator:ab0e32007633c5e09e0bcb67ea633162e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8175ffe1f3bb0841b9b1eff5a1c94321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a8175ffe1f3bb0841b9b1eff5a1c94321">BobinadoraMEFUpdate</a> (void)</td></tr>
+<tr class="separator:a8175ffe1f3bb0841b9b1eff5a1c94321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f987c704a784e5f014ff8179b232d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a29f987c704a784e5f014ff8179b232d5">MensajeBienvenida</a> (void)</td></tr>
+<tr class="separator:a29f987c704a784e5f014ff8179b232d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fdc7f01195c6d5cbc477158bd7ca377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a3fdc7f01195c6d5cbc477158bd7ca377">MenuConfigGeneral</a> (void)</td></tr>
+<tr class="separator:a3fdc7f01195c6d5cbc477158bd7ca377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca345a68028a9fb4a3f2568e3c77082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#acca345a68028a9fb4a3f2568e3c77082">IniciaBobinado</a> (void)</td></tr>
+<tr class="separator:acca345a68028a9fb4a3f2568e3c77082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410e30918e540f056a68a0e38ba51f38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a410e30918e540f056a68a0e38ba51f38">RepetirBobinado</a> (void)</td></tr>
+<tr class="separator:a410e30918e540f056a68a0e38ba51f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ebe944137868e43ae859196440a3b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a3ebe944137868e43ae859196440a3b09">ControlMotorPAP</a> (uint32_t vel_paso, bool_t dir_giro)</td></tr>
+<tr class="separator:a3ebe944137868e43ae859196440a3b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4155c20a7c8ea1e6578c9eb3cb64788b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a4155c20a7c8ea1e6578c9eb3cb64788b">ControlMotorBobinador</a> (uint8_t Duty)</td></tr>
+<tr class="separator:a4155c20a7c8ea1e6578c9eb3cb64788b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48db066ce37d3aea4afecbc84d0cc2b2"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a48db066ce37d3aea4afecbc84d0cc2b2">LecturaSensor</a> (void)</td></tr>
+<tr class="separator:a48db066ce37d3aea4afecbc84d0cc2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8ae46921c4ae7d57bd44dd994e10bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a1c8ae46921c4ae7d57bd44dd994e10bd">pwmInit</a> (void)</td></tr>
+<tr class="separator:a1c8ae46921c4ae7d57bd44dd994e10bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414ec0474daa68be4db1a13fb222af1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a414ec0474daa68be4db1a13fb222af1d">SoftStartMotorBobinador</a> (void)</td></tr>
+<tr class="separator:a414ec0474daa68be4db1a13fb222af1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8df2c2d57bccff28d4325c50e8fa1d08"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a8df2c2d57bccff28d4325c50e8fa1d08">char2int</a> (char *array, uint8_t n)</td></tr>
+<tr class="separator:a8df2c2d57bccff28d4325c50e8fa1d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7e346c41956a7cdf95ae58d4c4a560"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#afb7e346c41956a7cdf95ae58d4c4a560">KeypadToInt</a> (uint16_t teclaPresionada)</td></tr>
+<tr class="separator:afb7e346c41956a7cdf95ae58d4c4a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad1f9cde30dfd78abc04ed2451453aff8"><td class="memItemLeft" align="right" valign="top">delay_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ad1f9cde30dfd78abc04ed2451453aff8">Delay100ms</a></td></tr>
+<tr class="separator:ad1f9cde30dfd78abc04ed2451453aff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecc76e4f48f5ca9b35c6b1ea07967e4"><td class="memItemLeft" align="right" valign="top">delay_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a9ecc76e4f48f5ca9b35c6b1ea07967e4">Delay1</a></td></tr>
+<tr class="separator:a9ecc76e4f48f5ca9b35c6b1ea07967e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0124289264af95e257837659a2166f"><td class="memItemLeft" align="right" valign="top">delay_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a9a0124289264af95e257837659a2166f">Delay2</a></td></tr>
+<tr class="separator:a9a0124289264af95e257837659a2166f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7306758f1cf47c1b7f4a04bb325cc0f8"><td class="memItemLeft" align="right" valign="top">delay_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a7306758f1cf47c1b7f4a04bb325cc0f8">Delay3</a></td></tr>
+<tr class="separator:a7306758f1cf47c1b7f4a04bb325cc0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa54c7d43e3c209f419f10b3891880fe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5b">bob_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#aa54c7d43e3c209f419f10b3891880fe8">BobinadorState</a></td></tr>
+<tr class="separator:aa54c7d43e3c209f419f10b3891880fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0dfd4b3216111a20a0953d40f2b243"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53">menu_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a2f0dfd4b3216111a20a0953d40f2b243">MenuConfigState</a></td></tr>
+<tr class="separator:a2f0dfd4b3216111a20a0953d40f2b243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64be29a929b9d7e3152d492b417708b8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a64be29a929b9d7e3152d492b417708b8">diametro</a> = 0</td></tr>
+<tr class="separator:a64be29a929b9d7e3152d492b417708b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219c70f67475a06ecf916f8ae3de8183"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a219c70f67475a06ecf916f8ae3de8183">longitud</a> = 0</td></tr>
+<tr class="separator:a219c70f67475a06ecf916f8ae3de8183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7484bdab56226eaaf6d4548369a2e9e1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a7484bdab56226eaaf6d4548369a2e9e1">cantidad_espiras</a> = 0</td></tr>
+<tr class="separator:a7484bdab56226eaaf6d4548369a2e9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75cd1b06233155dadf676b1df096235"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ac75cd1b06233155dadf676b1df096235">cantidad_capas</a> = 0</td></tr>
+<tr class="separator:ac75cd1b06233155dadf676b1df096235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af59078ab0c81548fc9b3a318d98ce3e9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#af59078ab0c81548fc9b3a318d98ce3e9">velocidad</a> = 0</td></tr>
+<tr class="separator:af59078ab0c81548fc9b3a318d98ce3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998733fd58c9eee206769be01724337f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a998733fd58c9eee206769be01724337f">valorPWM</a> = 50</td></tr>
+<tr class="separator:a998733fd58c9eee206769be01724337f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fec5650aeba9a1f64fe4aa2b175c015"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#a4fec5650aeba9a1f64fe4aa2b175c015">conv_table</a> []</td></tr>
+<tr class="separator:a4fec5650aeba9a1f64fe4aa2b175c015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8a5970bf6c050d954a3bc70650ce57"><td class="memItemLeft" align="right" valign="top">keypad_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#afb8a5970bf6c050d954a3bc70650ce57">keypad</a></td></tr>
+<tr class="separator:afb8a5970bf6c050d954a3bc70650ce57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8418e1d81972da006d6ab5c482e2df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#abc8418e1d81972da006d6ab5c482e2df">keypadRowPins1</a> [4]</td></tr>
+<tr class="separator:abc8418e1d81972da006d6ab5c482e2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac186c03603e0a06b2c1df01812091447"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bobinadora_8c.html#ac186c03603e0a06b2c1df01812091447">keypadColPins1</a> [4]</td></tr>
+<tr class="separator:ac186c03603e0a06b2c1df01812091447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'defines'</h2>
+<a id="aabf9c516001d8e5c7c9e593e5a25d249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf9c516001d8e5c7c9e593e5a25d249">&#9670;&nbsp;</a></span>DERECHA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DERECHA&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00005">5</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="ad9ef6961fb41b000be06f50ff545f55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9ef6961fb41b000be06f50ff545f55d">&#9670;&nbsp;</a></span>IZQUIERDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IZQUIERDA&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00006">6</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="aad28fddcc33bb99bff17d2c95f1ee28a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad28fddcc33bb99bff17d2c95f1ee28a">&#9670;&nbsp;</a></span>MAX_DIGITOS_EN_VALORES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_DIGITOS_EN_VALORES&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00002">2</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00600">KeypadToInt()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="ab141c2f4969ddb17459e008d7062cc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab141c2f4969ddb17459e008d7062cc42">&#9670;&nbsp;</a></span>MAX_PULSOS_AVANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PULSOS_AVANCE&#160;&#160;&#160;46080</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00003">3</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="a3c10325a2e400a6d0cc9987638ad4a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c10325a2e400a6d0cc9987638ad4a5b">&#9670;&nbsp;</a></span>bob_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5b">bob_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estados de la maquina Bobinadora </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a3c10325a2e400a6d0cc9987638ad4a5ba9f962f8cfddf2f976ffae988c48dd7b3"></a>MENSAJE_BIENVENIDA&#160;</td><td class="fielddoc"><p>Mensaje inicial de Bienvenida. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c10325a2e400a6d0cc9987638ad4a5ba399904f026dcac4eecf2a0540bb44ae3"></a>MENU_CONFIG_GRAL&#160;</td><td class="fielddoc"><p>Estado de presentacion de menus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c10325a2e400a6d0cc9987638ad4a5baa39a1780487fe7e36fdb19f626295dc7"></a>CONTROL_VUELTAS&#160;</td><td class="fielddoc"><p>Estado de control de motores y sensor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c10325a2e400a6d0cc9987638ad4a5bab65857ca9606cbee5e5d80da354a85dc"></a>REPETIR_BOBINADO&#160;</td><td class="fielddoc"><p>Estado de repeticion de bobinado previo. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c10325a2e400a6d0cc9987638ad4a5bac99738da68a5ce747fbb9cc8e279fd62"></a>SUB_MENU_CONFIG&#160;</td><td class="fielddoc"><p>Estado de sub menu -no implementado-. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00022">22</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+</div>
+</div>
+<a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2f2c1eda9e7dc0e5b32b8871f2bc53">&#9670;&nbsp;</a></span>menu_config_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53">menu_config_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estados del menu de configuracion </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53a06d8faa02e79a9a6fbda9d2cd2440194"></a>MENU_DIAMETRO_ALAMBRE&#160;</td><td class="fielddoc"><p>Estado de Menu de ingreso diametro alambre. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53ab6e2020c69a0e91ebc81f83e9a38ac84"></a>MENU_LONGITUD_CARRETE&#160;</td><td class="fielddoc"><p>Estado de Menu de ingreso longitud del carrete. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53aebf2dc77e049c39e1e391b6201311b5b"></a>MENU_CANTIDAD_ESPIRAS&#160;</td><td class="fielddoc"><p>Estado de Menu de ingreso cantidad de espiras. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53a75ecf80a9fbf9d9ecbdbd7a695206ef3"></a>MENU_VELOCIDAD&#160;</td><td class="fielddoc"><p>Estado de Menu de ingreso velocidad PWM inicial bobinado. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a2f2c1eda9e7dc0e5b32b8871f2bc53aec3bb36b53f60016711c9476c88451c6"></a>MENU_HOME_SET_PRIMERA_ESPIRA&#160;</td><td class="fielddoc"><p>MENU_HOME_SET_PRIMERA_ESPIRA. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00035">35</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="ab0e32007633c5e09e0bcb67ea633162e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e32007633c5e09e0bcb67ea633162e">&#9670;&nbsp;</a></span>BobinadoraMEFInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BobinadoraMEFInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inicializa la MEF de la bobinadora </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00130">130</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00047">BobinadorState</a>, <a class="el" href="Bobinadora_8c_source.html#l00024">MENU_CONFIG_GRAL</a>, <a class="el" href="Bobinadora_8c_source.html#l00036">MENU_DIAMETRO_ALAMBRE</a> y <a class="el" href="Bobinadora_8c_source.html#l00048">MenuConfigState</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="a8175ffe1f3bb0841b9b1eff5a1c94321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8175ffe1f3bb0841b9b1eff5a1c94321">&#9670;&nbsp;</a></span>BobinadoraMEFUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BobinadoraMEFUpdate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Actualiza el estado de la MEF de la bobinadora </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00140">140</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00047">BobinadorState</a>, <a class="el" href="Bobinadora_8c_source.html#l00025">CONTROL_VUELTAS</a>, <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00023">MENSAJE_BIENVENIDA</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>, <a class="el" href="Bobinadora_8c_source.html#l00024">MENU_CONFIG_GRAL</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>, <a class="el" href="Bobinadora_8c_source.html#l00028">REPETIR_BOBINADO</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="a8df2c2d57bccff28d4325c50e8fa1d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df2c2d57bccff28d4325c50e8fa1d08">&#9670;&nbsp;</a></span>char2int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t char2int </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rutina Generica para convertir de arreglo a entero </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Arreglo a convertir </td></tr>
+    <tr><td class="paramname">n</td><td>Largo del arreglo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>valor entero convertido desde el arreglo </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00570">570</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00600">KeypadToInt()</a>.</p>
+
+</div>
+</div>
+<a id="a4155c20a7c8ea1e6578c9eb3cb64788b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4155c20a7c8ea1e6578c9eb3cb64788b">&#9670;&nbsp;</a></span>ControlMotorBobinador()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlMotorBobinador </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>Duty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00639">639</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a> y <a class="el" href="Bobinadora_8c_source.html#l00553">SoftStartMotorBobinador()</a>.</p>
+
+</div>
+</div>
+<a id="a3ebe944137868e43ae859196440a3b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ebe944137868e43ae859196440a3b09">&#9670;&nbsp;</a></span>ControlMotorPAP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlMotorPAP </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>vel_paso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>dir_giro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funcion de control del motor paso a paso </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vel_paso</td><td>Periodo entre pulsos de control </td></tr>
+    <tr><td class="paramname">dir_giro</td><td>Direccion de giro </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00621">621</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="acca345a68028a9fb4a3f2568e3c77082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca345a68028a9fb4a3f2568e3c77082">&#9670;&nbsp;</a></span>IniciaBobinado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IniciaBobinado </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Controla los motores durante la secuencia de bobinado Controla la cantidad de avance,vueltas,capas, etc </p>
+<p>Controlo la cantidad de vueltas y el avance de alambre, si se vuelve falso alguna paro el bobinado y asumo se termino: hago otro?</p>
+<p>Si llegue al maximo numero de pulsos en una direccion reinicio y cambio el sentido</p>
+<p>Lectura del sensor -hall</p>
+<p>Parar la secuencia de bobinado</p>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00427">427</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00047">BobinadorState</a>, <a class="el" href="Bobinadora_8c_source.html#l00051">cantidad_espiras</a>, <a class="el" href="Bobinadora_8c_source.html#l00639">ControlMotorBobinador()</a>, <a class="el" href="Bobinadora_8c_source.html#l00621">ControlMotorPAP()</a>, <a class="el" href="Bobinadora_8c_source.html#l00055">conv_table</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay1</a>, <a class="el" href="Bobinadora_8c_source.html#l00044">Delay100ms</a>, <a class="el" href="Bobinadora_8c_source.html#l00005">DERECHA</a>, <a class="el" href="Bobinadora_8c_source.html#l00006">IZQUIERDA</a>, <a class="el" href="Bobinadora_8c_source.html#l00058">keypad</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">LCD_Write_Str()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>, <a class="el" href="Bobinadora_8c_source.html#l00657">LecturaSensor()</a>, <a class="el" href="Bobinadora_8c_source.html#l00003">MAX_PULSOS_AVANCE</a>, <a class="el" href="Bobinadora_8c_source.html#l00024">MENU_CONFIG_GRAL</a>, <a class="el" href="Bobinadora_8c_source.html#l00028">REPETIR_BOBINADO</a> y <a class="el" href="Bobinadora_8c_source.html#l00553">SoftStartMotorBobinador()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>.</p>
+
+</div>
+</div>
+<a id="afb7e346c41956a7cdf95ae58d4c4a560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7e346c41956a7cdf95ae58d4c4a560">&#9670;&nbsp;</a></span>KeypadToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t KeypadToInt </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>teclaPresionada</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">teclaPresionada</td><td>Desde el teclado convierte los valores presionados a char </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>regresa un entero equivalente hasta la introduccion de '#' </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00600">600</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00570">char2int()</a>, <a class="el" href="Bobinadora_8c_source.html#l00055">conv_table</a> y <a class="el" href="Bobinadora_8c_source.html#l00002">MAX_DIGITOS_EN_VALORES</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a48db066ce37d3aea4afecbc84d0cc2b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48db066ce37d3aea4afecbc84d0cc2b2">&#9670;&nbsp;</a></span>LecturaSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t LecturaSensor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Leo el sensor Hall (analogico) por el A/D filtro y devuelvo booleano de nivel/flanco </p><dl class="section return"><dt>Devuelve</dt><dd>Flanco devuelve el estado del flanco del sensor </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00657">657</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00094">94</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00130">BobinadoraMEFInit()</a>, <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay1</a>, <a class="el" href="Bobinadora_8c_source.html#l00044">Delay100ms</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay2</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay3</a>, <a class="el" href="Bobinadora_8c_source.html#l00058">keypad</a>, <a class="el" href="Bobinadora_8c_source.html#l00068">keypadColPins1</a>, <a class="el" href="Bobinadora_8c_source.html#l00061">keypadRowPins1</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a> y <a class="el" href="Bobinadora_8c_source.html#l00644">pwmInit()</a>.</p>
+
+</div>
+</div>
+<a id="a29f987c704a784e5f014ff8179b232d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f987c704a784e5f014ff8179b232d5">&#9670;&nbsp;</a></span>MensajeBienvenida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MensajeBienvenida </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mensaje inicial de bienvenida al sistema </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00164">164</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00247">LCD_Write_Char()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">LCD_Write_Str()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">LCDbacklight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">LCDnoBacklight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>.</p>
+
+</div>
+</div>
+<a id="a3fdc7f01195c6d5cbc477158bd7ca377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fdc7f01195c6d5cbc477158bd7ca377">&#9670;&nbsp;</a></span>MenuConfigGeneral()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuConfigGeneral </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Posicionamiento del HOME de primera espira con el motor stepper Se activan leds como indicadores de estado</p>
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00188">188</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00047">BobinadorState</a>, <a class="el" href="Bobinadora_8c_source.html#l00052">cantidad_capas</a>, <a class="el" href="Bobinadora_8c_source.html#l00051">cantidad_espiras</a>, <a class="el" href="Bobinadora_8c_source.html#l00025">CONTROL_VUELTAS</a>, <a class="el" href="Bobinadora_8c_source.html#l00621">ControlMotorPAP()</a>, <a class="el" href="Bobinadora_8c_source.html#l00055">conv_table</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay1</a>, <a class="el" href="Bobinadora_8c_source.html#l00044">Delay100ms</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay2</a>, <a class="el" href="Bobinadora_8c_source.html#l00049">diametro</a>, <a class="el" href="Bobinadora_8c_source.html#l00058">keypad</a>, <a class="el" href="Bobinadora_8c_source.html#l00600">KeypadToInt()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00247">LCD_Write_Char()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">LCD_Write_Str()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">LCDblinkOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>, <a class="el" href="Bobinadora_8c_source.html#l00050">longitud</a>, <a class="el" href="Bobinadora_8c_source.html#l00002">MAX_DIGITOS_EN_VALORES</a>, <a class="el" href="Bobinadora_8c_source.html#l00038">MENU_CANTIDAD_ESPIRAS</a>, <a class="el" href="Bobinadora_8c_source.html#l00036">MENU_DIAMETRO_ALAMBRE</a>, <a class="el" href="Bobinadora_8c_source.html#l00041">MENU_HOME_SET_PRIMERA_ESPIRA</a>, <a class="el" href="Bobinadora_8c_source.html#l00037">MENU_LONGITUD_CARRETE</a>, <a class="el" href="Bobinadora_8c_source.html#l00040">MENU_VELOCIDAD</a>, <a class="el" href="Bobinadora_8c_source.html#l00048">MenuConfigState</a> y <a class="el" href="Bobinadora_8c_source.html#l00053">velocidad</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>.</p>
+
+</div>
+</div>
+<a id="a1c8ae46921c4ae7d57bd44dd994e10bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8ae46921c4ae7d57bd44dd994e10bd">&#9670;&nbsp;</a></span>pwmInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pwmInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00644">644</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="a410e30918e540f056a68a0e38ba51f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410e30918e540f056a68a0e38ba51f38">&#9670;&nbsp;</a></span>RepetirBobinado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RepetirBobinado </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00523">523</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00047">BobinadorState</a>, <a class="el" href="Bobinadora_8c_source.html#l00055">conv_table</a>, <a class="el" href="Bobinadora_8c_source.html#l00044">Delay100ms</a>, <a class="el" href="Bobinadora_8c_source.html#l00058">keypad</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">LCD_Write_Str()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>, <a class="el" href="Bobinadora_8c_source.html#l00024">MENU_CONFIG_GRAL</a>, <a class="el" href="Bobinadora_8c_source.html#l00036">MENU_DIAMETRO_ALAMBRE</a>, <a class="el" href="Bobinadora_8c_source.html#l00041">MENU_HOME_SET_PRIMERA_ESPIRA</a>, <a class="el" href="Bobinadora_8c_source.html#l00048">MenuConfigState</a> y <a class="el" href="Bobinadora_8c_source.html#l00054">valorPWM</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>.</p>
+
+</div>
+</div>
+<a id="a414ec0474daa68be4db1a13fb222af1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a414ec0474daa68be4db1a13fb222af1d">&#9670;&nbsp;</a></span>SoftStartMotorBobinador()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoftStartMotorBobinador </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00553">553</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="Bobinadora_8c_source.html#l00639">ControlMotorBobinador()</a>, <a class="el" href="Bobinadora_8c_source.html#l00045">Delay3</a> y <a class="el" href="Bobinadora_8c_source.html#l00054">valorPWM</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="aa54c7d43e3c209f419f10b3891880fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54c7d43e3c209f419f10b3891880fe8">&#9670;&nbsp;</a></span>BobinadorState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Bobinadora_8c.html#a3c10325a2e400a6d0cc9987638ad4a5b">bob_state_t</a> BobinadorState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00047">47</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00130">BobinadoraMEFInit()</a>, <a class="el" href="Bobinadora_8c_source.html#l00140">BobinadoraMEFUpdate()</a>, <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="ac75cd1b06233155dadf676b1df096235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75cd1b06233155dadf676b1df096235">&#9670;&nbsp;</a></span>cantidad_capas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t cantidad_capas = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00052">52</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a7484bdab56226eaaf6d4548369a2e9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7484bdab56226eaaf6d4548369a2e9e1">&#9670;&nbsp;</a></span>cantidad_espiras</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t cantidad_espiras = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00051">51</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a4fec5650aeba9a1f64fe4aa2b175c015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fec5650aeba9a1f64fe4aa2b175c015">&#9670;&nbsp;</a></span>conv_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char conv_table[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= { <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>,</div><div class="line">        <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;*&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;#&#39;</span>, <span class="charliteral">&#39;,&#39;</span> }</div></div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00055">55</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00600">KeypadToInt()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a9ecc76e4f48f5ca9b35c6b1ea07967e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecc76e4f48f5ca9b35c6b1ea07967e4">&#9670;&nbsp;</a></span>Delay1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delay_t Delay1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00045">45</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="ad1f9cde30dfd78abc04ed2451453aff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f9cde30dfd78abc04ed2451453aff8">&#9670;&nbsp;</a></span>Delay100ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delay_t Delay100ms</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00044">44</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a9a0124289264af95e257837659a2166f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0124289264af95e257837659a2166f">&#9670;&nbsp;</a></span>Delay2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delay_t Delay2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00045">45</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a7306758f1cf47c1b7f4a04bb325cc0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7306758f1cf47c1b7f4a04bb325cc0f8">&#9670;&nbsp;</a></span>Delay3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delay_t Delay3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00045">45</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a> y <a class="el" href="Bobinadora_8c_source.html#l00553">SoftStartMotorBobinador()</a>.</p>
+
+</div>
+</div>
+<a id="a64be29a929b9d7e3152d492b417708b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64be29a929b9d7e3152d492b417708b8">&#9670;&nbsp;</a></span>diametro</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t diametro = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00049">49</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="afb8a5970bf6c050d954a3bc70650ce57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8a5970bf6c050d954a3bc70650ce57">&#9670;&nbsp;</a></span>keypad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">keypad_t keypad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00058">58</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="ac186c03603e0a06b2c1df01812091447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac186c03603e0a06b2c1df01812091447">&#9670;&nbsp;</a></span>keypadColPins1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t keypadColPins1[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= { T_FIL0,    </div><div class="line">        T_FIL3,    </div><div class="line">        T_FIL2,    </div><div class="line">        T_COL0     </div><div class="line">        }</div></div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00068">68</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="abc8418e1d81972da006d6ab5c482e2df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8418e1d81972da006d6ab5c482e2df">&#9670;&nbsp;</a></span>keypadRowPins1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t keypadRowPins1[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= { RS232_TXD, </div><div class="line">        CAN_RD,    </div><div class="line">        CAN_TD,    </div><div class="line">        T_COL1     </div><div class="line">        }</div></div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00061">61</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="a219c70f67475a06ecf916f8ae3de8183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219c70f67475a06ecf916f8ae3de8183">&#9670;&nbsp;</a></span>longitud</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t longitud = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00050">50</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a2f0dfd4b3216111a20a0953d40f2b243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0dfd4b3216111a20a0953d40f2b243">&#9670;&nbsp;</a></span>MenuConfigState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Bobinadora_8c.html#a7a2f2c1eda9e7dc0e5b32b8871f2bc53">menu_config_t</a> MenuConfigState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00048">48</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00130">BobinadoraMEFInit()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a998733fd58c9eee206769be01724337f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998733fd58c9eee206769be01724337f">&#9670;&nbsp;</a></span>valorPWM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t valorPWM = 50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00054">54</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a> y <a class="el" href="Bobinadora_8c_source.html#l00553">SoftStartMotorBobinador()</a>.</p>
+
+</div>
+</div>
+<a id="af59078ab0c81548fc9b3a318d98ce3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af59078ab0c81548fc9b3a318d98ce3e9">&#9670;&nbsp;</a></span>velocidad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t velocidad = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Bobinadora_8c_source.html#l00053">53</a> del archivo <a class="el" href="Bobinadora_8c_source.html">Bobinadora.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

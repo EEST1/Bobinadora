@@ -1,0 +1,1538 @@
+\hypertarget{LCD__I2C__PCF8574_8c}{}\section{Referencia del Archivo projects/\+Bobinadora/src/\+L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.c}
+\label{LCD__I2C__PCF8574_8c}\index{projects/\+Bobinadora/src/\+L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{projects/\+Bobinadora/src/\+L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+{\ttfamily \#include \char`\"{}L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sapi.\+h\char`\"{}}\newline
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a3f2897b31d9b8ee5ada65f840adb635b}{L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY}~0x01
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8f9bf7b2d236dfd31791e1c178e43e74}{L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME}~0x02
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ae5e77a91b0fef0c36af29424a1ee2da1}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}~0x04
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ab1fb2568cd5b8fb0f9103652a3deb895}{L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}~0x02
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ac2021cdfbf4fbe2b0ca6cf9afae5391c}{L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ab86f91a1de3fe872625d466c155d9101}{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON}~0x01
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8c07c63f30fc7379224ad655028bdd3f}{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a15534510d6979ed7dde8279d63425f21}{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF}~0x08
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a846dac5d1bb72bef7a76ee110c0445b6}{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON}~0x04
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ab1b96426e59139b68ae95df45d697087}{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8dae7021acb10d4e5f8458a5fba78729}{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON}~0x02
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a7a6a930d205b2819be910af194576dca}{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a058503e5404981067ac6a84027a41cc0}{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON}~0x01
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a45ceab13b2dd69220290a91df577005a}{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a7d145bebc4487858e5f4d1b5c7a49337}{L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY}~0x10
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_af28b516fdfb684933ae1384c73882714}{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT}~0x08
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8d4f53c5f381bd5fcd9d73fe001d8557}{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8ab3108396a0d33dbf7f3ab6477ba01d}{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT}~0x04
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a941377571f34b9d898b61ce89f10226d}{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_af8ec7e043a3b67ee423b97783d08aeb1}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET}~0x20
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_aa845effe98436f945d3b3a2d849a7a6b}{L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS}~0x10
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_adce3fff507d4da176b47f680688c14a3}{L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ad6c9684cdd2b844f304e5fd4a5b3872b}{L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES}~0x08
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a5444cde196d8c0be6ed0e7ad0c59968a}{L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a43e027860da15021563ab176fba8a391}{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10}~0x04
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a4ee5e8ee42282148e9c6c7b44f56f6a9}{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ab3361a30e03882f3e8382bddd65dfceb}{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}~0x40
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ac4b762513ec4f4e0963ed823a7a0406d}{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}~0b00111111
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a105aa63c2514ab5d39a834b465247fba}{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}~0x80
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_aed2f0834b80bd40efee88700fd7a5f75}{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}~0b01111111
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a4feaced0d41894d5c5b74f1a687a1cc6}{Bl}~0b00001000
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ab5ef25ebfe582f7bf0d93e2770548e2c}{En}~0b00000100
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a98b6a2661a04ebbc1b3f38da70306814}{Rw}~0b00000010
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a345d1a871beb9e772c3bf9ef75412bb5}{Rs}~0b00000001
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a8d4a9596af8bbfbd7472da7812ca6fc6}{L\+C\+D\+\_\+\+I\+N\+IT}~((0b00000000 $\vert$ En) \& $\sim$\+Rs) \& ($\sim$\+Rw)
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a647a546e11bfb688586e35087df7fcc1}{L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT}~0b00110000
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a53daf8098a6d8c6703540e9e883af1de}{L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT}~0b00100000
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_abbdd13afe8efcfbde4d82805e0b9758c}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR}~0x27
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_aef0d13bc9f51f3ba51c9caa5898e77e8}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU}~0b11110000
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_affc03e8cbd07c62ce2e26b190c66b1d5}{L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}~0b10000000
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a016b95bffe9e472b5afeac7288360d60}{L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK}~0b01111111
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_adae78cd0d04b19760d362972fe9b89ec}{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS}~20
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a77ea70242c5ca6ad568f9857d2f19f5d}{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS}~4
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_ac30f9eb729142201bec6ef0aa45e5c07}{L\+C\+D\+\_\+\+L\+I\+N\+E1}~0x00
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_aee2c59879d4dca634a1ba6a2769e4ee6}{L\+C\+D\+\_\+\+L\+I\+N\+E2}~0x40
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a3a2ee32835c7649e5da01563407d8665}{L\+C\+D\+\_\+\+L\+I\+N\+E3}~0x14
+\item 
+\#define \hyperlink{LCD__I2C__PCF8574_8c_a11fc99e0a8ac2eb3504e94b0a771234f}{L\+C\+D\+\_\+\+L\+I\+N\+E4}~0x54
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{LCD__I2C__PCF8574_8c_a13acefd0d11196ff8c6daa2ff3ed2d29}{L\+C\+Dsend} (unsigned char value, unsigned char mode)
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a597dd7a0e98c704c6f7fab1a3c89feaf}{L\+C\+Dreceive} (unsigned char Rs\+Mode)
+\item 
+static void \hyperlink{LCD__I2C__PCF8574_8c_afc403c359b1c0e6f5708ed4fc5d4645c}{L\+C\+Dwrite4bits} (unsigned char value)
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_aa8a36ec725b905147e9031614f961b68}{L\+C\+Dread4bits} (unsigned char Rs\+En\+Mode)
+\item 
+static void \hyperlink{LCD__I2C__PCF8574_8c_a0aff31e8adfbce1c457445ae3badc956}{L\+C\+Dpulse\+Enable\+Neg} (unsigned char value)
+\item 
+static void \hyperlink{LCD__I2C__PCF8574_8c_aa7fc797af790f107c6a440ec8c632ea1}{L\+C\+Dpulse\+Enable\+Pos} (unsigned char value)
+\item 
+static void \hyperlink{LCD__I2C__PCF8574_8c_ad7787eae6330b47f00799165d13d9541}{L\+C\+Dwrite\+P\+C\+F8574} (unsigned char value)
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_afc33705b3442b2b64da0e37c66e937bd}{L\+C\+Dread\+P\+C\+F8574} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_aa53c9d40f3aa552a9974cd55ac510cb3}{L\+C\+D\+\_\+\+Init} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ae9c650f49a8f9a9a92f51688900e742c}{L\+C\+D\+\_\+\+Write\+\_\+\+Char} (char message)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a65b06fe894038f90a9f53e99e3fc8fbf}{L\+C\+D\+\_\+\+Write\+\_\+\+Str} (const char $\ast$message)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a28e765a7041cb850f82f1e7b36ef4898}{L\+C\+Dclear} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ad74df554eff3cd08ef61efdc72e735d6}{L\+C\+Dhome} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a60bdd1a73fbc04c8e182c91c27a04915}{L\+C\+Dset\+Cursor} (unsigned char col, unsigned char row)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_aee74df42657e7a190b4fbf6933255a9c}{L\+C\+Ddisplay\+Off} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a32fe62f95ed35ea3bafa8a6771e63b04}{L\+C\+Ddisplay\+On} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a7c105a2127f1cb106a3eb671cff58d44}{L\+C\+Dcursor\+Off} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a15bbb083e06533b2f5407bfdeb6017d9}{L\+C\+Dcursor\+On} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ae9144503676fb80a80a0ede7f0449eca}{L\+C\+Dblink\+Off} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a8ba1e91a65ca3292c122d8023dbcb4e1}{L\+C\+Dblink\+On} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a81901c738652518834c1b139e8047aca}{L\+C\+Dscroll\+Display\+Left} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ade4b6e0943d25788b87464b3c49e4bfe}{L\+C\+Dscroll\+Display\+Right} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a5052618da28a47d1dc2f879a8c7ee884}{L\+C\+Dleft\+To\+Right} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a113425757094ab857a93d30574d9392c}{L\+C\+Dright\+To\+Left} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ad79cea7d286f1df79fc31521ed4b6ac5}{L\+C\+Dautoscroll} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ae1eb1e3764fe0bb405a5f04946728631}{L\+C\+Dno\+Autoscroll} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_aa4643617a491fd2e6901091bb2df1a44}{L\+C\+Dcreate\+Char} (unsigned char location, unsigned char charmap\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a074d56ec773c0051845931bf60f753b7}{L\+C\+Dno\+Backlight} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ac412e44bd7d29501c93d923417615ae8}{L\+C\+Dbacklight} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_ad08a4ca7b7b6c57978927c5ff3dc358a}{L\+C\+Dcommand\+Write} (unsigned char value)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a5c8ca995daf87f930f349b84b96480eb}{L\+C\+Dcommand\+Read} (void)
+\item 
+void \hyperlink{LCD__I2C__PCF8574_8c_a997716073ea22e27a90103f6dc1c5e7c}{L\+C\+Ddata\+Write} (unsigned char value)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a7d3122c5d0270f7f7fd78856e1cc1e5c}{L\+C\+Ddata\+Read} (void)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_abd267316fc24a179e8cc0449125e3244}{L\+C\+Dbusy} (void)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a38e01871da0c147552eac02f211af21d}{L\+C\+Daddress\+Counter} (void)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_ab3fb97cc5cb16158e8a78bd240a81066}{L\+C\+Dread\+D\+D\+Ram} (unsigned char address)
+\item 
+unsigned char \hyperlink{LCD__I2C__PCF8574_8c_ac625c945546f1254c9123340b4c5414b}{L\+C\+Dread\+C\+G\+Ram} (unsigned char address)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_ac9683cf1eedc10de7c085f1462a1b28c}{\+\_\+functionset} = 0
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a9339a041268b3108436f28c231265507}{\+\_\+entrymodeset} = 0
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a761d0fd852727b89d0215131f18f5175}{\+\_\+displayfunction} = 0
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a98fd5b25152758219808e1c105eebed9}{\+\_\+displaycontrol} = 0
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a3e77ebd2a672556345cd718c13e2d829}{\+\_\+numlines} = 0
+\item 
+static unsigned char \hyperlink{LCD__I2C__PCF8574_8c_a5c08f6d33d76e94094bb999cb6e6a8e5}{\+\_\+backlightval} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de los \textquotesingle{}defines\textquotesingle{}}
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a4feaced0d41894d5c5b74f1a687a1cc6}\label{LCD__I2C__PCF8574_8c_a4feaced0d41894d5c5b74f1a687a1cc6}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!Bl@{Bl}}
+\index{Bl@{Bl}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{Bl}{Bl}}
+{\footnotesize\ttfamily \#define Bl~0b00001000}
+
+
+
+Definición en la línea 72 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dbacklight() y L\+C\+Dno\+Backlight().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab5ef25ebfe582f7bf0d93e2770548e2c}\label{LCD__I2C__PCF8574_8c_ab5ef25ebfe582f7bf0d93e2770548e2c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!En@{En}}
+\index{En@{En}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{En}{En}}
+{\footnotesize\ttfamily \#define En~0b00000100}
+
+
+
+Definición en la línea 73 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dpulse\+Enable\+Neg(), L\+C\+Dpulse\+Enable\+Pos(), L\+C\+Dreceive() y L\+C\+Dsend().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a53daf8098a6d8c6703540e9e883af1de}\label{LCD__I2C__PCF8574_8c_a53daf8098a6d8c6703540e9e883af1de}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT}}
+\index{L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT}{LCD\_4BIT\_INIT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT~0b00100000}
+
+
+
+Definición en la línea 80 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a647a546e11bfb688586e35087df7fcc1}\label{LCD__I2C__PCF8574_8c_a647a546e11bfb688586e35087df7fcc1}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT}}
+\index{L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT}{LCD\_8BIT\_INIT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT~0b00110000}
+
+
+
+Definición en la línea 79 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a016b95bffe9e472b5afeac7288360d60}\label{LCD__I2C__PCF8574_8c_a016b95bffe9e472b5afeac7288360d60}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK}}
+\index{L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK}{LCD\_ADDRESS\_COUNTER\_MASK}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK~0b01111111}
+
+
+
+Definición en la línea 86 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Daddress\+Counter().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a45ceab13b2dd69220290a91df577005a}\label{LCD__I2C__PCF8574_8c_a45ceab13b2dd69220290a91df577005a}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF}}
+\index{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF}{LCD\_BLINKING\_OFF}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF~0x00}
+
+
+
+Definición en la línea 45 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a058503e5404981067ac6a84027a41cc0}\label{LCD__I2C__PCF8574_8c_a058503e5404981067ac6a84027a41cc0}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON@{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON}}
+\index{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON@{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON}{LCD\_BLINKING\_ON}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON~0x01}
+
+
+
+Definición en la línea 44 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dblink\+Off() y L\+C\+Dblink\+On().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_affc03e8cbd07c62ce2e26b190c66b1d5}\label{LCD__I2C__PCF8574_8c_affc03e8cbd07c62ce2e26b190c66b1d5}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}}
+\index{L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}{LCD\_BUSY\_FLAG\_MASK}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK~0b10000000}
+
+
+
+Definición en la línea 85 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dbusy().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab3361a30e03882f3e8382bddd65dfceb}\label{LCD__I2C__PCF8574_8c_ab3361a30e03882f3e8382bddd65dfceb}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS@{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\index{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS@{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}{LCD\_CG\_RAM\_ADDRESS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS~0x40}
+
+
+
+Definición en la línea 63 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dcreate\+Char() y L\+C\+Dread\+C\+G\+Ram().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac4b762513ec4f4e0963ed823a7a0406d}\label{LCD__I2C__PCF8574_8c_ac4b762513ec4f4e0963ed823a7a0406d}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}}
+\index{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}{LCD\_CG\_RAM\_ADDRESS\_MASK}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK~0b00111111}
+
+
+
+Definición en la línea 64 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dread\+C\+G\+Ram().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a3f2897b31d9b8ee5ada65f840adb635b}\label{LCD__I2C__PCF8574_8c_a3f2897b31d9b8ee5ada65f840adb635b}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY@{L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY}}
+\index{L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY@{L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY}{LCD\_CLEAR\_DISPLAY}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY~0x01}
+
+
+
+Definición en la línea 27 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dclear().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a7a6a930d205b2819be910af194576dca}\label{LCD__I2C__PCF8574_8c_a7a6a930d205b2819be910af194576dca}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF}}
+\index{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF}{LCD\_CURSOR\_OFF}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF~0x00}
+
+
+
+Definición en la línea 43 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8dae7021acb10d4e5f8458a5fba78729}\label{LCD__I2C__PCF8574_8c_a8dae7021acb10d4e5f8458a5fba78729}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON}}
+\index{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON}{LCD\_CURSOR\_ON}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON~0x02}
+
+
+
+Definición en la línea 42 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dcursor\+Off() y L\+C\+Dcursor\+On().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8d4f53c5f381bd5fcd9d73fe001d8557}\label{LCD__I2C__PCF8574_8c_a8d4f53c5f381bd5fcd9d73fe001d8557}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT}}
+\index{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT@{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT}{LCD\_CURSOR\_SHIFT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+S\+H\+I\+FT~0x00}
+
+
+
+Definición en la línea 50 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a105aa63c2514ab5d39a834b465247fba}\label{LCD__I2C__PCF8574_8c_a105aa63c2514ab5d39a834b465247fba}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS@{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\index{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS@{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS}{LCD\_DD\_RAM\_ADDRESS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS~0x80}
+
+
+
+Definición en la línea 66 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dread\+D\+D\+Ram() y L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aed2f0834b80bd40efee88700fd7a5f75}\label{LCD__I2C__PCF8574_8c_aed2f0834b80bd40efee88700fd7a5f75}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}}
+\index{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK@{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}{LCD\_DD\_RAM\_ADDRESS\_MASK}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK~0b01111111}
+
+
+
+Definición en la línea 67 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dread\+D\+D\+Ram().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac2021cdfbf4fbe2b0ca6cf9afae5391c}\label{LCD__I2C__PCF8574_8c_ac2021cdfbf4fbe2b0ca6cf9afae5391c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT@{L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT}}
+\index{L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT@{L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT}{LCD\_DECREMENT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+E\+C\+R\+E\+M\+E\+NT~0x00}
+
+
+
+Definición en la línea 34 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab1b96426e59139b68ae95df45d697087}\label{LCD__I2C__PCF8574_8c_ab1b96426e59139b68ae95df45d697087}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF}}
+\index{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF}{LCD\_DISPLAY\_OFF}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF~0x00}
+
+
+
+Definición en la línea 41 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a846dac5d1bb72bef7a76ee110c0445b6}\label{LCD__I2C__PCF8574_8c_a846dac5d1bb72bef7a76ee110c0445b6}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON}}
+\index{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON}{LCD\_DISPLAY\_ON}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON~0x04}
+
+
+
+Definición en la línea 40 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Ddisplay\+Off() y L\+C\+Ddisplay\+On().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a15534510d6979ed7dde8279d63425f21}\label{LCD__I2C__PCF8574_8c_a15534510d6979ed7dde8279d63425f21}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF}}
+\index{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF}{LCD\_DISPLAY\_ON\_OFF}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF~0x08}
+
+
+
+Definición en la línea 39 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dcursor\+Off(), L\+C\+Dcursor\+On(), L\+C\+Ddisplay\+Off() y L\+C\+Ddisplay\+On().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_af28b516fdfb684933ae1384c73882714}\label{LCD__I2C__PCF8574_8c_af28b516fdfb684933ae1384c73882714}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT}}
+\index{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT@{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT}{LCD\_DISPLAY\_SHIFT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT~0x08}
+
+
+
+Definición en la línea 49 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dscroll\+Display\+Left() y L\+C\+Dscroll\+Display\+Right().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ae5e77a91b0fef0c36af29424a1ee2da1}\label{LCD__I2C__PCF8574_8c_ae5e77a91b0fef0c36af29424a1ee2da1}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET@{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}}
+\index{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET@{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}{LCD\_ENTRY\_MODE\_SET}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET~0x04}
+
+
+
+Definición en la línea 32 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dautoscroll(), L\+C\+Dleft\+To\+Right(), L\+C\+Dno\+Autoscroll() y L\+C\+Dright\+To\+Left().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a43e027860da15021563ab176fba8a391}\label{LCD__I2C__PCF8574_8c_a43e027860da15021563ab176fba8a391}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10@{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10}}
+\index{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10@{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10}{LCD\_FONT\_5\_10}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+10~0x04}
+
+
+
+Definición en la línea 60 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a4ee5e8ee42282148e9c6c7b44f56f6a9}\label{LCD__I2C__PCF8574_8c_a4ee5e8ee42282148e9c6c7b44f56f6a9}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7@{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7}}
+\index{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7@{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7}{LCD\_FONT\_5\_7}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7~0x00}
+
+
+
+Definición en la línea 61 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_af8ec7e043a3b67ee423b97783d08aeb1}\label{LCD__I2C__PCF8574_8c_af8ec7e043a3b67ee423b97783d08aeb1}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET@{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET}}
+\index{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET@{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET}{LCD\_FUNCTION\_SET}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET~0x20}
+
+
+
+Definición en la línea 55 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab1fb2568cd5b8fb0f9103652a3deb895}\label{LCD__I2C__PCF8574_8c_ab1fb2568cd5b8fb0f9103652a3deb895}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT@{L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}}
+\index{L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT@{L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}{LCD\_INCREMENT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT~0x02}
+
+
+
+Definición en la línea 33 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dleft\+To\+Right() y L\+C\+Dright\+To\+Left().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8d4a9596af8bbfbd7472da7812ca6fc6}\label{LCD__I2C__PCF8574_8c_a8d4a9596af8bbfbd7472da7812ca6fc6}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+\+I\+N\+IT}}
+\index{L\+C\+D\+\_\+\+I\+N\+IT@{L\+C\+D\+\_\+\+I\+N\+IT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+I\+N\+IT}{LCD\_INIT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+I\+N\+IT~((0b00000000 $\vert$ En) \& $\sim$\+Rs) \& ($\sim$\+Rw)}
+
+
+
+Definición en la línea 78 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_adce3fff507d4da176b47f680688c14a3}\label{LCD__I2C__PCF8574_8c_adce3fff507d4da176b47f680688c14a3}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS@{L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS}}
+\index{L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS@{L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS}{LCD\_INTF4BITS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS~0x00}
+
+
+
+Definición en la línea 57 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aa845effe98436f945d3b3a2d849a7a6b}\label{LCD__I2C__PCF8574_8c_aa845effe98436f945d3b3a2d849a7a6b}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS@{L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS}}
+\index{L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS@{L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS}{LCD\_INTF8BITS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+I\+N\+T\+F8\+B\+I\+TS~0x10}
+
+
+
+Definición en la línea 56 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac30f9eb729142201bec6ef0aa45e5c07}\label{LCD__I2C__PCF8574_8c_ac30f9eb729142201bec6ef0aa45e5c07}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+L\+I\+N\+E1@{L\+C\+D\+\_\+\+L\+I\+N\+E1}}
+\index{L\+C\+D\+\_\+\+L\+I\+N\+E1@{L\+C\+D\+\_\+\+L\+I\+N\+E1}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+L\+I\+N\+E1}{LCD\_LINE1}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+L\+I\+N\+E1~0x00}
+
+
+
+Definición en la línea 143 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aee2c59879d4dca634a1ba6a2769e4ee6}\label{LCD__I2C__PCF8574_8c_aee2c59879d4dca634a1ba6a2769e4ee6}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+L\+I\+N\+E2@{L\+C\+D\+\_\+\+L\+I\+N\+E2}}
+\index{L\+C\+D\+\_\+\+L\+I\+N\+E2@{L\+C\+D\+\_\+\+L\+I\+N\+E2}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+L\+I\+N\+E2}{LCD\_LINE2}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+L\+I\+N\+E2~0x40}
+
+
+
+Definición en la línea 144 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a3a2ee32835c7649e5da01563407d8665}\label{LCD__I2C__PCF8574_8c_a3a2ee32835c7649e5da01563407d8665}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+L\+I\+N\+E3@{L\+C\+D\+\_\+\+L\+I\+N\+E3}}
+\index{L\+C\+D\+\_\+\+L\+I\+N\+E3@{L\+C\+D\+\_\+\+L\+I\+N\+E3}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+L\+I\+N\+E3}{LCD\_LINE3}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+L\+I\+N\+E3~0x14}
+
+
+
+Definición en la línea 145 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a11fc99e0a8ac2eb3504e94b0a771234f}\label{LCD__I2C__PCF8574_8c_a11fc99e0a8ac2eb3504e94b0a771234f}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+L\+I\+N\+E4@{L\+C\+D\+\_\+\+L\+I\+N\+E4}}
+\index{L\+C\+D\+\_\+\+L\+I\+N\+E4@{L\+C\+D\+\_\+\+L\+I\+N\+E4}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+L\+I\+N\+E4}{LCD\_LINE4}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+L\+I\+N\+E4~0x54}
+
+
+
+Definición en la línea 146 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_adae78cd0d04b19760d362972fe9b89ec}\label{LCD__I2C__PCF8574_8c_adae78cd0d04b19760d362972fe9b89ec}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS@{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS}}
+\index{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS@{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS}{LCD\_MAX\_COLS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+C\+O\+LS~20}
+
+
+
+Definición en la línea 87 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a77ea70242c5ca6ad568f9857d2f19f5d}\label{LCD__I2C__PCF8574_8c_a77ea70242c5ca6ad568f9857d2f19f5d}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS@{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS}}
+\index{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS@{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS}{LCD\_MAX\_ROWS}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS~4}
+
+
+
+Definición en la línea 88 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a7d145bebc4487858e5f4d1b5c7a49337}\label{LCD__I2C__PCF8574_8c_a7d145bebc4487858e5f4d1b5c7a49337}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY@{L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY}}
+\index{L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY@{L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY}{LCD\_MV\_CUR\_SHIFT\_DISPLAY}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY~0x10}
+
+
+
+Definición en la línea 48 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dscroll\+Display\+Left() y L\+C\+Dscroll\+Display\+Right().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a5444cde196d8c0be6ed0e7ad0c59968a}\label{LCD__I2C__PCF8574_8c_a5444cde196d8c0be6ed0e7ad0c59968a}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE@{L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE}}
+\index{L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE@{L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE}{LCD\_ONE\_LINE}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+O\+N\+E\+\_\+\+L\+I\+NE~0x00}
+
+
+
+Definición en la línea 59 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_abbdd13afe8efcfbde4d82805e0b9758c}\label{LCD__I2C__PCF8574_8c_abbdd13afe8efcfbde4d82805e0b9758c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR@{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR}}
+\index{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR@{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR}{LCD\_PCF8574\_ADDR}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR~0x27}
+
+
+
+Definición en la línea 82 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dread\+P\+C\+F8574() y L\+C\+Dwrite\+P\+C\+F8574().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aef0d13bc9f51f3ba51c9caa5898e77e8}\label{LCD__I2C__PCF8574_8c_aef0d13bc9f51f3ba51c9caa5898e77e8}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU@{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU}}
+\index{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU@{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU}{LCD\_PCF8574\_WEAK\_PU}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU~0b11110000}
+
+
+
+Definición en la línea 83 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dreceive().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8f9bf7b2d236dfd31791e1c178e43e74}\label{LCD__I2C__PCF8574_8c_a8f9bf7b2d236dfd31791e1c178e43e74}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME@{L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME}}
+\index{L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME@{L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME}{LCD\_RETURN\_HOME}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME~0x02}
+
+
+
+Definición en la línea 29 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dhome().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a941377571f34b9d898b61ce89f10226d}\label{LCD__I2C__PCF8574_8c_a941377571f34b9d898b61ce89f10226d}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT}}
+\index{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT}{LCD\_SHIFT\_LEFT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT~0x00}
+
+
+
+Definición en la línea 52 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8c07c63f30fc7379224ad655028bdd3f}\label{LCD__I2C__PCF8574_8c_a8c07c63f30fc7379224ad655028bdd3f}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF}}
+\index{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF}{LCD\_SHIFT\_OFF}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF~0x00}
+
+
+
+Definición en la línea 36 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab86f91a1de3fe872625d466c155d9101}\label{LCD__I2C__PCF8574_8c_ab86f91a1de3fe872625d466c155d9101}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON}}
+\index{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON}{LCD\_SHIFT\_ON}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON~0x01}
+
+
+
+Definición en la línea 35 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dautoscroll() y L\+C\+Dno\+Autoscroll().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8ab3108396a0d33dbf7f3ab6477ba01d}\label{LCD__I2C__PCF8574_8c_a8ab3108396a0d33dbf7f3ab6477ba01d}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT}}
+\index{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT@{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT}{LCD\_SHIFT\_RIGHT}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT~0x04}
+
+
+
+Definición en la línea 51 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dscroll\+Display\+Left() y L\+C\+Dscroll\+Display\+Right().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ad6c9684cdd2b844f304e5fd4a5b3872b}\label{LCD__I2C__PCF8574_8c_ad6c9684cdd2b844f304e5fd4a5b3872b}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES@{L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES}}
+\index{L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES@{L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES}{LCD\_TWO\_LINES}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES~0x08}
+
+
+
+Definición en la línea 58 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a345d1a871beb9e772c3bf9ef75412bb5}\label{LCD__I2C__PCF8574_8c_a345d1a871beb9e772c3bf9ef75412bb5}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!Rs@{Rs}}
+\index{Rs@{Rs}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{Rs}{Rs}}
+{\footnotesize\ttfamily \#define Rs~0b00000001}
+
+
+
+Definición en la línea 75 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dcommand\+Read(), L\+C\+Dcommand\+Write(), L\+C\+Ddata\+Read() y L\+C\+Ddata\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a98b6a2661a04ebbc1b3f38da70306814}\label{LCD__I2C__PCF8574_8c_a98b6a2661a04ebbc1b3f38da70306814}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!Rw@{Rw}}
+\index{Rw@{Rw}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{Rw}{Rw}}
+{\footnotesize\ttfamily \#define Rw~0b00000010}
+
+
+
+Definición en la línea 74 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+Dread4bits() y L\+C\+Dwrite4bits().
+
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aa53c9d40f3aa552a9974cd55ac510cb3}\label{LCD__I2C__PCF8574_8c_aa53c9d40f3aa552a9974cd55ac510cb3}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+Init@{L\+C\+D\+\_\+\+Init}}
+\index{L\+C\+D\+\_\+\+Init@{L\+C\+D\+\_\+\+Init}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+Init()}{LCD\_Init()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 179 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+backlightval, \+\_\+displaycontrol, \+\_\+displayfunction, \+\_\+entrymodeset, \+\_\+functionset, \+\_\+numlines, Bl, L\+C\+D\+\_\+4\+B\+I\+T\+\_\+\+I\+N\+IT, L\+C\+D\+\_\+8\+B\+I\+T\+\_\+\+I\+N\+IT, L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+O\+FF, L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+O\+FF, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT, L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET, L\+C\+D\+\_\+\+F\+O\+N\+T\+\_\+5\+\_\+7, L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+ET, L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT, L\+C\+D\+\_\+\+I\+N\+IT, L\+C\+D\+\_\+\+I\+N\+T\+F4\+B\+I\+TS, L\+C\+D\+\_\+\+M\+A\+X\+\_\+\+R\+O\+WS, L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+L\+E\+FT, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+O\+FF, L\+C\+D\+\_\+\+T\+W\+O\+\_\+\+L\+I\+N\+ES, L\+C\+Dclear(), L\+C\+Dcommand\+Write(), L\+C\+Ddisplay\+Off(), L\+C\+Ddisplay\+On() y L\+C\+Dwrite4bits().
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ae9c650f49a8f9a9a92f51688900e742c}\label{LCD__I2C__PCF8574_8c_ae9c650f49a8f9a9a92f51688900e742c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+Write\+\_\+\+Char@{L\+C\+D\+\_\+\+Write\+\_\+\+Char}}
+\index{L\+C\+D\+\_\+\+Write\+\_\+\+Char@{L\+C\+D\+\_\+\+Write\+\_\+\+Char}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+Write\+\_\+\+Char()}{LCD\_Write\_Char()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+\+Write\+\_\+\+Char (\begin{DoxyParamCaption}\item[{char}]{message }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 247 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Ddata\+Write().
+
+
+
+Referenciado por Mensaje\+Bienvenida() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a65b06fe894038f90a9f53e99e3fc8fbf}\label{LCD__I2C__PCF8574_8c_a65b06fe894038f90a9f53e99e3fc8fbf}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+D\+\_\+\+Write\+\_\+\+Str@{L\+C\+D\+\_\+\+Write\+\_\+\+Str}}
+\index{L\+C\+D\+\_\+\+Write\+\_\+\+Str@{L\+C\+D\+\_\+\+Write\+\_\+\+Str}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+\+Write\+\_\+\+Str()}{LCD\_Write\_Str()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+\+Write\+\_\+\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 252 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Ddata\+Write().
+
+
+
+Referenciado por Inicia\+Bobinado(), Mensaje\+Bienvenida(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a38e01871da0c147552eac02f211af21d}\label{LCD__I2C__PCF8574_8c_a38e01871da0c147552eac02f211af21d}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Daddress\+Counter@{L\+C\+Daddress\+Counter}}
+\index{L\+C\+Daddress\+Counter@{L\+C\+Daddress\+Counter}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Daddress\+Counter()}{LCDaddressCounter()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Daddress\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 409 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+M\+A\+SK y L\+C\+Dcommand\+Read().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ad79cea7d286f1df79fc31521ed4b6ac5}\label{LCD__I2C__PCF8574_8c_ad79cea7d286f1df79fc31521ed4b6ac5}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dautoscroll@{L\+C\+Dautoscroll}}
+\index{L\+C\+Dautoscroll@{L\+C\+Dautoscroll}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dautoscroll()}{LCDautoscroll()}}
+{\footnotesize\ttfamily void L\+C\+Dautoscroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 351 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+entrymodeset, L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac412e44bd7d29501c93d923417615ae8}\label{LCD__I2C__PCF8574_8c_ac412e44bd7d29501c93d923417615ae8}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dbacklight@{L\+C\+Dbacklight}}
+\index{L\+C\+Dbacklight@{L\+C\+Dbacklight}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dbacklight()}{LCDbacklight()}}
+{\footnotesize\ttfamily void L\+C\+Dbacklight (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 380 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+backlightval, Bl, L\+C\+Dread\+P\+C\+F8574() y L\+C\+Dwrite\+P\+C\+F8574().
+
+
+
+Referenciado por Mensaje\+Bienvenida().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ae9144503676fb80a80a0ede7f0449eca}\label{LCD__I2C__PCF8574_8c_ae9144503676fb80a80a0ede7f0449eca}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dblink\+Off@{L\+C\+Dblink\+Off}}
+\index{L\+C\+Dblink\+Off@{L\+C\+Dblink\+Off}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dblink\+Off()}{LCDblinkOff()}}
+{\footnotesize\ttfamily void L\+C\+Dblink\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 313 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por Inicia\+Bobinado(), Mensaje\+Bienvenida() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a8ba1e91a65ca3292c122d8023dbcb4e1}\label{LCD__I2C__PCF8574_8c_a8ba1e91a65ca3292c122d8023dbcb4e1}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dblink\+On@{L\+C\+Dblink\+On}}
+\index{L\+C\+Dblink\+On@{L\+C\+Dblink\+On}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dblink\+On()}{LCDblinkOn()}}
+{\footnotesize\ttfamily void L\+C\+Dblink\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 318 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+B\+L\+I\+N\+K\+I\+N\+G\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por Menu\+Config\+General().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_abd267316fc24a179e8cc0449125e3244}\label{LCD__I2C__PCF8574_8c_abd267316fc24a179e8cc0449125e3244}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dbusy@{L\+C\+Dbusy}}
+\index{L\+C\+Dbusy@{L\+C\+Dbusy}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dbusy()}{LCDbusy()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Dbusy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 405 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+B\+U\+S\+Y\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK y L\+C\+Dcommand\+Read().
+
+
+
+Referenciado por L\+C\+Dclear() y L\+C\+Dhome().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a28e765a7041cb850f82f1e7b36ef4898}\label{LCD__I2C__PCF8574_8c_a28e765a7041cb850f82f1e7b36ef4898}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dclear@{L\+C\+Dclear}}
+\index{L\+C\+Dclear@{L\+C\+Dclear}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dclear()}{LCDclear()}}
+{\footnotesize\ttfamily void L\+C\+Dclear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 261 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+I\+S\+P\+L\+AY, L\+C\+Dbusy() y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por Inicia\+Bobinado(), L\+C\+D\+\_\+\+Init(), Mensaje\+Bienvenida(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a5c8ca995daf87f930f349b84b96480eb}\label{LCD__I2C__PCF8574_8c_a5c8ca995daf87f930f349b84b96480eb}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dcommand\+Read@{L\+C\+Dcommand\+Read}}
+\index{L\+C\+Dcommand\+Read@{L\+C\+Dcommand\+Read}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dcommand\+Read()}{LCDcommandRead()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Dcommand\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea 393 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dreceive() y Rs.
+
+
+
+Referenciado por L\+C\+Daddress\+Counter() y L\+C\+Dbusy().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ad08a4ca7b7b6c57978927c5ff3dc358a}\label{LCD__I2C__PCF8574_8c_ad08a4ca7b7b6c57978927c5ff3dc358a}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dcommand\+Write@{L\+C\+Dcommand\+Write}}
+\index{L\+C\+Dcommand\+Write@{L\+C\+Dcommand\+Write}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dcommand\+Write()}{LCDcommandWrite()}}
+{\footnotesize\ttfamily void L\+C\+Dcommand\+Write (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea 389 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dsend() y Rs.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dautoscroll(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dclear(), L\+C\+Dcreate\+Char(), L\+C\+Dcursor\+Off(), L\+C\+Dcursor\+On(), L\+C\+Ddisplay\+Off(), L\+C\+Ddisplay\+On(), L\+C\+Dhome(), L\+C\+Dleft\+To\+Right(), L\+C\+Dno\+Autoscroll(), L\+C\+Dread\+C\+G\+Ram(), L\+C\+Dread\+D\+D\+Ram(), L\+C\+Dright\+To\+Left(), L\+C\+Dscroll\+Display\+Left(), L\+C\+Dscroll\+Display\+Right() y L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aa4643617a491fd2e6901091bb2df1a44}\label{LCD__I2C__PCF8574_8c_aa4643617a491fd2e6901091bb2df1a44}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dcreate\+Char@{L\+C\+Dcreate\+Char}}
+\index{L\+C\+Dcreate\+Char@{L\+C\+Dcreate\+Char}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dcreate\+Char()}{LCDcreateChar()}}
+{\footnotesize\ttfamily void L\+C\+Dcreate\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{location,  }\item[{unsigned char}]{charmap\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 366 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS, L\+C\+Dcommand\+Write() y L\+C\+Ddata\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a7c105a2127f1cb106a3eb671cff58d44}\label{LCD__I2C__PCF8574_8c_a7c105a2127f1cb106a3eb671cff58d44}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dcursor\+Off@{L\+C\+Dcursor\+Off}}
+\index{L\+C\+Dcursor\+Off@{L\+C\+Dcursor\+Off}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dcursor\+Off()}{LCDcursorOff()}}
+{\footnotesize\ttfamily void L\+C\+Dcursor\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 302 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por Inicia\+Bobinado(), Mensaje\+Bienvenida() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a15bbb083e06533b2f5407bfdeb6017d9}\label{LCD__I2C__PCF8574_8c_a15bbb083e06533b2f5407bfdeb6017d9}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dcursor\+On@{L\+C\+Dcursor\+On}}
+\index{L\+C\+Dcursor\+On@{L\+C\+Dcursor\+On}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dcursor\+On()}{LCDcursorOn()}}
+{\footnotesize\ttfamily void L\+C\+Dcursor\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 307 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a7d3122c5d0270f7f7fd78856e1cc1e5c}\label{LCD__I2C__PCF8574_8c_a7d3122c5d0270f7f7fd78856e1cc1e5c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Ddata\+Read@{L\+C\+Ddata\+Read}}
+\index{L\+C\+Ddata\+Read@{L\+C\+Ddata\+Read}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Ddata\+Read()}{LCDdataRead()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Ddata\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea 401 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dreceive() y Rs.
+
+
+
+Referenciado por L\+C\+Dread\+C\+G\+Ram() y L\+C\+Dread\+D\+D\+Ram().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a997716073ea22e27a90103f6dc1c5e7c}\label{LCD__I2C__PCF8574_8c_a997716073ea22e27a90103f6dc1c5e7c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Ddata\+Write@{L\+C\+Ddata\+Write}}
+\index{L\+C\+Ddata\+Write@{L\+C\+Ddata\+Write}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Ddata\+Write()}{LCDdataWrite()}}
+{\footnotesize\ttfamily void L\+C\+Ddata\+Write (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea 397 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dsend() y Rs.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str() y L\+C\+Dcreate\+Char().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aee74df42657e7a190b4fbf6933255a9c}\label{LCD__I2C__PCF8574_8c_aee74df42657e7a190b4fbf6933255a9c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Ddisplay\+Off@{L\+C\+Ddisplay\+Off}}
+\index{L\+C\+Ddisplay\+Off@{L\+C\+Ddisplay\+Off}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Ddisplay\+Off()}{LCDdisplayOff()}}
+{\footnotesize\ttfamily void L\+C\+Ddisplay\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 291 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a32fe62f95ed35ea3bafa8a6771e63b04}\label{LCD__I2C__PCF8574_8c_a32fe62f95ed35ea3bafa8a6771e63b04}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Ddisplay\+On@{L\+C\+Ddisplay\+On}}
+\index{L\+C\+Ddisplay\+On@{L\+C\+Ddisplay\+On}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Ddisplay\+On()}{LCDdisplayOn()}}
+{\footnotesize\ttfamily void L\+C\+Ddisplay\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 296 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displayfunction, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+N\+\_\+\+O\+FF y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ad74df554eff3cd08ef61efdc72e735d6}\label{LCD__I2C__PCF8574_8c_ad74df554eff3cd08ef61efdc72e735d6}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dhome@{L\+C\+Dhome}}
+\index{L\+C\+Dhome@{L\+C\+Dhome}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dhome()}{LCDhome()}}
+{\footnotesize\ttfamily void L\+C\+Dhome (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 270 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+H\+O\+ME, L\+C\+Dbusy() y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a5052618da28a47d1dc2f879a8c7ee884}\label{LCD__I2C__PCF8574_8c_a5052618da28a47d1dc2f879a8c7ee884}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dleft\+To\+Right@{L\+C\+Dleft\+To\+Right}}
+\index{L\+C\+Dleft\+To\+Right@{L\+C\+Dleft\+To\+Right}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dleft\+To\+Right()}{LCDleftToRight()}}
+{\footnotesize\ttfamily void L\+C\+Dleft\+To\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 337 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+entrymodeset, L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET, L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ae1eb1e3764fe0bb405a5f04946728631}\label{LCD__I2C__PCF8574_8c_ae1eb1e3764fe0bb405a5f04946728631}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dno\+Autoscroll@{L\+C\+Dno\+Autoscroll}}
+\index{L\+C\+Dno\+Autoscroll@{L\+C\+Dno\+Autoscroll}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dno\+Autoscroll()}{LCDnoAutoscroll()}}
+{\footnotesize\ttfamily void L\+C\+Dno\+Autoscroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 358 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+entrymodeset, L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+ON y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a074d56ec773c0051845931bf60f753b7}\label{LCD__I2C__PCF8574_8c_a074d56ec773c0051845931bf60f753b7}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dno\+Backlight@{L\+C\+Dno\+Backlight}}
+\index{L\+C\+Dno\+Backlight@{L\+C\+Dno\+Backlight}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dno\+Backlight()}{LCDnoBacklight()}}
+{\footnotesize\ttfamily void L\+C\+Dno\+Backlight (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 375 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+backlightval, Bl, L\+C\+Dread\+P\+C\+F8574() y L\+C\+Dwrite\+P\+C\+F8574().
+
+
+
+Referenciado por Mensaje\+Bienvenida().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a0aff31e8adfbce1c457445ae3badc956}\label{LCD__I2C__PCF8574_8c_a0aff31e8adfbce1c457445ae3badc956}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dpulse\+Enable\+Neg@{L\+C\+Dpulse\+Enable\+Neg}}
+\index{L\+C\+Dpulse\+Enable\+Neg@{L\+C\+Dpulse\+Enable\+Neg}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dpulse\+Enable\+Neg()}{LCDpulseEnableNeg()}}
+{\footnotesize\ttfamily static void L\+C\+Dpulse\+Enable\+Neg (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 470 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a En y L\+C\+Dwrite\+P\+C\+F8574().
+
+
+
+Referenciado por L\+C\+Dread4bits() y L\+C\+Dwrite4bits().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aa7fc797af790f107c6a440ec8c632ea1}\label{LCD__I2C__PCF8574_8c_aa7fc797af790f107c6a440ec8c632ea1}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dpulse\+Enable\+Pos@{L\+C\+Dpulse\+Enable\+Pos}}
+\index{L\+C\+Dpulse\+Enable\+Pos@{L\+C\+Dpulse\+Enable\+Pos}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dpulse\+Enable\+Pos()}{LCDpulseEnablePos()}}
+{\footnotesize\ttfamily static void L\+C\+Dpulse\+Enable\+Pos (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 478 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a En y L\+C\+Dwrite\+P\+C\+F8574().
+
+
+
+Referenciado por L\+C\+Dread4bits().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_aa8a36ec725b905147e9031614f961b68}\label{LCD__I2C__PCF8574_8c_aa8a36ec725b905147e9031614f961b68}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dread4bits@{L\+C\+Dread4bits}}
+\index{L\+C\+Dread4bits@{L\+C\+Dread4bits}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dread4bits()}{LCDread4bits()}}
+{\footnotesize\ttfamily static unsigned char L\+C\+Dread4bits (\begin{DoxyParamCaption}\item[{unsigned char}]{Rs\+En\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 462 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dpulse\+Enable\+Neg(), L\+C\+Dpulse\+Enable\+Pos(), L\+C\+Dread\+P\+C\+F8574() y Rw.
+
+
+
+Referenciado por L\+C\+Dreceive().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac625c945546f1254c9123340b4c5414b}\label{LCD__I2C__PCF8574_8c_ac625c945546f1254c9123340b4c5414b}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dread\+C\+G\+Ram@{L\+C\+Dread\+C\+G\+Ram}}
+\index{L\+C\+Dread\+C\+G\+Ram@{L\+C\+Dread\+C\+G\+Ram}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dread\+C\+G\+Ram()}{LCDreadCGRam()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Dread\+C\+G\+Ram (\begin{DoxyParamCaption}\item[{unsigned char}]{address }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 419 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS, L\+C\+D\+\_\+\+C\+G\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK, L\+C\+Dcommand\+Write() y L\+C\+Ddata\+Read().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ab3fb97cc5cb16158e8a78bd240a81066}\label{LCD__I2C__PCF8574_8c_ab3fb97cc5cb16158e8a78bd240a81066}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dread\+D\+D\+Ram@{L\+C\+Dread\+D\+D\+Ram}}
+\index{L\+C\+Dread\+D\+D\+Ram@{L\+C\+Dread\+D\+D\+Ram}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dread\+D\+D\+Ram()}{LCDreadDDRam()}}
+{\footnotesize\ttfamily unsigned char L\+C\+Dread\+D\+D\+Ram (\begin{DoxyParamCaption}\item[{unsigned char}]{address }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 413 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS, L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK, L\+C\+Dcommand\+Write() y L\+C\+Ddata\+Read().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_afc33705b3442b2b64da0e37c66e937bd}\label{LCD__I2C__PCF8574_8c_afc33705b3442b2b64da0e37c66e937bd}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dread\+P\+C\+F8574@{L\+C\+Dread\+P\+C\+F8574}}
+\index{L\+C\+Dread\+P\+C\+F8574@{L\+C\+Dread\+P\+C\+F8574}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dread\+P\+C\+F8574()}{LCDreadPCF8574()}}
+{\footnotesize\ttfamily static unsigned char L\+C\+Dread\+P\+C\+F8574 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 494 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR.
+
+
+
+Referenciado por L\+C\+Dbacklight(), L\+C\+Dno\+Backlight() y L\+C\+Dread4bits().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a597dd7a0e98c704c6f7fab1a3c89feaf}\label{LCD__I2C__PCF8574_8c_a597dd7a0e98c704c6f7fab1a3c89feaf}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dreceive@{L\+C\+Dreceive}}
+\index{L\+C\+Dreceive@{L\+C\+Dreceive}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dreceive()}{LCDreceive()}}
+{\footnotesize\ttfamily static unsigned char L\+C\+Dreceive (\begin{DoxyParamCaption}\item[{unsigned char}]{Rs\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 443 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a En, L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+W\+E\+A\+K\+\_\+\+PU, L\+C\+Dread4bits() y L\+C\+Dwrite\+P\+C\+F8574().
+
+
+
+Referenciado por L\+C\+Dcommand\+Read() y L\+C\+Ddata\+Read().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a113425757094ab857a93d30574d9392c}\label{LCD__I2C__PCF8574_8c_a113425757094ab857a93d30574d9392c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dright\+To\+Left@{L\+C\+Dright\+To\+Left}}
+\index{L\+C\+Dright\+To\+Left@{L\+C\+Dright\+To\+Left}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dright\+To\+Left()}{LCDrightToLeft()}}
+{\footnotesize\ttfamily void L\+C\+Dright\+To\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 344 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+entrymodeset, L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET, L\+C\+D\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a81901c738652518834c1b139e8047aca}\label{LCD__I2C__PCF8574_8c_a81901c738652518834c1b139e8047aca}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dscroll\+Display\+Left@{L\+C\+Dscroll\+Display\+Left}}
+\index{L\+C\+Dscroll\+Display\+Left@{L\+C\+Dscroll\+Display\+Left}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dscroll\+Display\+Left()}{LCDscrollDisplayLeft()}}
+{\footnotesize\ttfamily void L\+C\+Dscroll\+Display\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 323 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displaycontrol, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT, L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ade4b6e0943d25788b87464b3c49e4bfe}\label{LCD__I2C__PCF8574_8c_ade4b6e0943d25788b87464b3c49e4bfe}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dscroll\+Display\+Right@{L\+C\+Dscroll\+Display\+Right}}
+\index{L\+C\+Dscroll\+Display\+Right@{L\+C\+Dscroll\+Display\+Right}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dscroll\+Display\+Right()}{LCDscrollDisplayRight()}}
+{\footnotesize\ttfamily void L\+C\+Dscroll\+Display\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 329 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+displaycontrol, L\+C\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+H\+I\+FT, L\+C\+D\+\_\+\+M\+V\+\_\+\+C\+U\+R\+\_\+\+S\+H\+I\+F\+T\+\_\+\+D\+I\+S\+P\+L\+AY, L\+C\+D\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+I\+G\+HT y L\+C\+Dcommand\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a13acefd0d11196ff8c6daa2ff3ed2d29}\label{LCD__I2C__PCF8574_8c_a13acefd0d11196ff8c6daa2ff3ed2d29}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dsend@{L\+C\+Dsend}}
+\index{L\+C\+Dsend@{L\+C\+Dsend}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dsend()}{LCDsend()}}
+{\footnotesize\ttfamily static void L\+C\+Dsend (\begin{DoxyParamCaption}\item[{unsigned char}]{value,  }\item[{unsigned char}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 430 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a En y L\+C\+Dwrite4bits().
+
+
+
+Referenciado por L\+C\+Dcommand\+Write() y L\+C\+Ddata\+Write().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a60bdd1a73fbc04c8e182c91c27a04915}\label{LCD__I2C__PCF8574_8c_a60bdd1a73fbc04c8e182c91c27a04915}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dset\+Cursor@{L\+C\+Dset\+Cursor}}
+\index{L\+C\+Dset\+Cursor@{L\+C\+Dset\+Cursor}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dset\+Cursor()}{LCDsetCursor()}}
+{\footnotesize\ttfamily void L\+C\+Dset\+Cursor (\begin{DoxyParamCaption}\item[{unsigned char}]{col,  }\item[{unsigned char}]{row }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 279 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+numlines, L\+C\+D\+\_\+\+D\+D\+\_\+\+R\+A\+M\+\_\+\+A\+D\+D\+R\+E\+SS, L\+C\+D\+\_\+\+L\+I\+N\+E1, L\+C\+D\+\_\+\+L\+I\+N\+E2, L\+C\+D\+\_\+\+L\+I\+N\+E3, L\+C\+D\+\_\+\+L\+I\+N\+E4 y L\+C\+Dcommand\+Write().
+
+
+
+Referenciado por Inicia\+Bobinado(), Mensaje\+Bienvenida(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_afc403c359b1c0e6f5708ed4fc5d4645c}\label{LCD__I2C__PCF8574_8c_afc403c359b1c0e6f5708ed4fc5d4645c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dwrite4bits@{L\+C\+Dwrite4bits}}
+\index{L\+C\+Dwrite4bits@{L\+C\+Dwrite4bits}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dwrite4bits()}{LCDwrite4bits()}}
+{\footnotesize\ttfamily static void L\+C\+Dwrite4bits (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 456 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a L\+C\+Dpulse\+Enable\+Neg(), L\+C\+Dwrite\+P\+C\+F8574() y Rw.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init() y L\+C\+Dsend().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ad7787eae6330b47f00799165d13d9541}\label{LCD__I2C__PCF8574_8c_ad7787eae6330b47f00799165d13d9541}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!L\+C\+Dwrite\+P\+C\+F8574@{L\+C\+Dwrite\+P\+C\+F8574}}
+\index{L\+C\+Dwrite\+P\+C\+F8574@{L\+C\+Dwrite\+P\+C\+F8574}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+Dwrite\+P\+C\+F8574()}{LCDwritePCF8574()}}
+{\footnotesize\ttfamily static void L\+C\+Dwrite\+P\+C\+F8574 (\begin{DoxyParamCaption}\item[{unsigned char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 487 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Hace referencia a \+\_\+backlightval y L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+A\+D\+DR.
+
+
+
+Referenciado por L\+C\+Dbacklight(), L\+C\+Dno\+Backlight(), L\+C\+Dpulse\+Enable\+Neg(), L\+C\+Dpulse\+Enable\+Pos(), L\+C\+Dreceive() y L\+C\+Dwrite4bits().
+
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a5c08f6d33d76e94094bb999cb6e6a8e5}\label{LCD__I2C__PCF8574_8c_a5c08f6d33d76e94094bb999cb6e6a8e5}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+backlightval@{\+\_\+backlightval}}
+\index{\+\_\+backlightval@{\+\_\+backlightval}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+backlightval}{\_backlightval}}
+{\footnotesize\ttfamily unsigned char \+\_\+backlightval = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 164 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dbacklight(), L\+C\+Dno\+Backlight() y L\+C\+Dwrite\+P\+C\+F8574().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a98fd5b25152758219808e1c105eebed9}\label{LCD__I2C__PCF8574_8c_a98fd5b25152758219808e1c105eebed9}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+displaycontrol@{\+\_\+displaycontrol}}
+\index{\+\_\+displaycontrol@{\+\_\+displaycontrol}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+displaycontrol}{\_displaycontrol}}
+{\footnotesize\ttfamily unsigned char \+\_\+displaycontrol = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 162 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dscroll\+Display\+Left() y L\+C\+Dscroll\+Display\+Right().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a761d0fd852727b89d0215131f18f5175}\label{LCD__I2C__PCF8574_8c_a761d0fd852727b89d0215131f18f5175}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+displayfunction@{\+\_\+displayfunction}}
+\index{\+\_\+displayfunction@{\+\_\+displayfunction}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+displayfunction}{\_displayfunction}}
+{\footnotesize\ttfamily unsigned char \+\_\+displayfunction = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 161 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dcursor\+Off(), L\+C\+Dcursor\+On(), L\+C\+Ddisplay\+Off() y L\+C\+Ddisplay\+On().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a9339a041268b3108436f28c231265507}\label{LCD__I2C__PCF8574_8c_a9339a041268b3108436f28c231265507}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+entrymodeset@{\+\_\+entrymodeset}}
+\index{\+\_\+entrymodeset@{\+\_\+entrymodeset}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+entrymodeset}{\_entrymodeset}}
+{\footnotesize\ttfamily unsigned char \+\_\+entrymodeset = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 160 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init(), L\+C\+Dautoscroll(), L\+C\+Dleft\+To\+Right(), L\+C\+Dno\+Autoscroll() y L\+C\+Dright\+To\+Left().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_ac9683cf1eedc10de7c085f1462a1b28c}\label{LCD__I2C__PCF8574_8c_ac9683cf1eedc10de7c085f1462a1b28c}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+functionset@{\+\_\+functionset}}
+\index{\+\_\+functionset@{\+\_\+functionset}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+functionset}{\_functionset}}
+{\footnotesize\ttfamily unsigned char \+\_\+functionset = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 159 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init().
+
+\mbox{\Hypertarget{LCD__I2C__PCF8574_8c_a3e77ebd2a672556345cd718c13e2d829}\label{LCD__I2C__PCF8574_8c_a3e77ebd2a672556345cd718c13e2d829}} 
+\index{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}!\+\_\+numlines@{\+\_\+numlines}}
+\index{\+\_\+numlines@{\+\_\+numlines}!L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c@{L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+numlines}{\_numlines}}
+{\footnotesize\ttfamily unsigned char \+\_\+numlines = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea 163 del archivo L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+c.
+
+
+
+Referenciado por L\+C\+D\+\_\+\+Init() y L\+C\+Dset\+Cursor().
+

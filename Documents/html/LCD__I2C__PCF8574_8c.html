@@ -1,0 +1,2259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bobinadora: Referencia del Archivo projects/Bobinadora/src/LCD_I2C_PCF8574.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bobinadora
+   &#160;<span id="projectnumber">v0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a9ec1ef424966475f993eb98877e3088.html">projects</a></li><li class="navelem"><a class="el" href="dir_2473f7eecb74d75af576ad8fa3914f51.html">Bobinadora</a></li><li class="navelem"><a class="el" href="dir_a4ffede9b2f07bed5a0a6879ad4c6e4b.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo LCD_I2C_PCF8574.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;LCD_I2C_PCF8574.h&quot;</code><br />
+<code>#include &quot;sapi.h&quot;</code><br />
+</div>
+<p><a href="LCD__I2C__PCF8574_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3f2897b31d9b8ee5ada65f840adb635b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a3f2897b31d9b8ee5ada65f840adb635b">LCD_CLEAR_DISPLAY</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:a3f2897b31d9b8ee5ada65f840adb635b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9bf7b2d236dfd31791e1c178e43e74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8f9bf7b2d236dfd31791e1c178e43e74">LCD_RETURN_HOME</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:a8f9bf7b2d236dfd31791e1c178e43e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e77a91b0fef0c36af29424a1ee2da1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ae5e77a91b0fef0c36af29424a1ee2da1">LCD_ENTRY_MODE_SET</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:ae5e77a91b0fef0c36af29424a1ee2da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1fb2568cd5b8fb0f9103652a3deb895"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab1fb2568cd5b8fb0f9103652a3deb895">LCD_INCREMENT</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:ab1fb2568cd5b8fb0f9103652a3deb895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2021cdfbf4fbe2b0ca6cf9afae5391c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac2021cdfbf4fbe2b0ca6cf9afae5391c">LCD_DECREMENT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ac2021cdfbf4fbe2b0ca6cf9afae5391c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86f91a1de3fe872625d466c155d9101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab86f91a1de3fe872625d466c155d9101">LCD_SHIFT_ON</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:ab86f91a1de3fe872625d466c155d9101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c07c63f30fc7379224ad655028bdd3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8c07c63f30fc7379224ad655028bdd3f">LCD_SHIFT_OFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a8c07c63f30fc7379224ad655028bdd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15534510d6979ed7dde8279d63425f21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a15534510d6979ed7dde8279d63425f21">LCD_DISPLAY_ON_OFF</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:a15534510d6979ed7dde8279d63425f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846dac5d1bb72bef7a76ee110c0445b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a846dac5d1bb72bef7a76ee110c0445b6">LCD_DISPLAY_ON</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:a846dac5d1bb72bef7a76ee110c0445b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b96426e59139b68ae95df45d697087"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab1b96426e59139b68ae95df45d697087">LCD_DISPLAY_OFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ab1b96426e59139b68ae95df45d697087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dae7021acb10d4e5f8458a5fba78729"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8dae7021acb10d4e5f8458a5fba78729">LCD_CURSOR_ON</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:a8dae7021acb10d4e5f8458a5fba78729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6a930d205b2819be910af194576dca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a7a6a930d205b2819be910af194576dca">LCD_CURSOR_OFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a7a6a930d205b2819be910af194576dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058503e5404981067ac6a84027a41cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a058503e5404981067ac6a84027a41cc0">LCD_BLINKING_ON</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:a058503e5404981067ac6a84027a41cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ceab13b2dd69220290a91df577005a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a45ceab13b2dd69220290a91df577005a">LCD_BLINKING_OFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a45ceab13b2dd69220290a91df577005a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d145bebc4487858e5f4d1b5c7a49337"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a7d145bebc4487858e5f4d1b5c7a49337">LCD_MV_CUR_SHIFT_DISPLAY</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="separator:a7d145bebc4487858e5f4d1b5c7a49337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28b516fdfb684933ae1384c73882714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#af28b516fdfb684933ae1384c73882714">LCD_DISPLAY_SHIFT</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:af28b516fdfb684933ae1384c73882714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4f53c5f381bd5fcd9d73fe001d8557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8d4f53c5f381bd5fcd9d73fe001d8557">LCD_CURSOR_SHIFT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a8d4f53c5f381bd5fcd9d73fe001d8557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab3108396a0d33dbf7f3ab6477ba01d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8ab3108396a0d33dbf7f3ab6477ba01d">LCD_SHIFT_RIGHT</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:a8ab3108396a0d33dbf7f3ab6477ba01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941377571f34b9d898b61ce89f10226d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a941377571f34b9d898b61ce89f10226d">LCD_SHIFT_LEFT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a941377571f34b9d898b61ce89f10226d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ec7e043a3b67ee423b97783d08aeb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#af8ec7e043a3b67ee423b97783d08aeb1">LCD_FUNCTION_SET</a>&#160;&#160;&#160;0x20</td></tr>
+<tr class="separator:af8ec7e043a3b67ee423b97783d08aeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa845effe98436f945d3b3a2d849a7a6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aa845effe98436f945d3b3a2d849a7a6b">LCD_INTF8BITS</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="separator:aa845effe98436f945d3b3a2d849a7a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce3fff507d4da176b47f680688c14a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#adce3fff507d4da176b47f680688c14a3">LCD_INTF4BITS</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:adce3fff507d4da176b47f680688c14a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c9684cdd2b844f304e5fd4a5b3872b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ad6c9684cdd2b844f304e5fd4a5b3872b">LCD_TWO_LINES</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ad6c9684cdd2b844f304e5fd4a5b3872b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5444cde196d8c0be6ed0e7ad0c59968a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a5444cde196d8c0be6ed0e7ad0c59968a">LCD_ONE_LINE</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a5444cde196d8c0be6ed0e7ad0c59968a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e027860da15021563ab176fba8a391"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a43e027860da15021563ab176fba8a391">LCD_FONT_5_10</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:a43e027860da15021563ab176fba8a391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee5e8ee42282148e9c6c7b44f56f6a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a4ee5e8ee42282148e9c6c7b44f56f6a9">LCD_FONT_5_7</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a4ee5e8ee42282148e9c6c7b44f56f6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3361a30e03882f3e8382bddd65dfceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab3361a30e03882f3e8382bddd65dfceb">LCD_CG_RAM_ADDRESS</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:ab3361a30e03882f3e8382bddd65dfceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b762513ec4f4e0963ed823a7a0406d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac4b762513ec4f4e0963ed823a7a0406d">LCD_CG_RAM_ADDRESS_MASK</a>&#160;&#160;&#160;0b00111111</td></tr>
+<tr class="separator:ac4b762513ec4f4e0963ed823a7a0406d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105aa63c2514ab5d39a834b465247fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a105aa63c2514ab5d39a834b465247fba">LCD_DD_RAM_ADDRESS</a>&#160;&#160;&#160;0x80</td></tr>
+<tr class="separator:a105aa63c2514ab5d39a834b465247fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2f0834b80bd40efee88700fd7a5f75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aed2f0834b80bd40efee88700fd7a5f75">LCD_DD_RAM_ADDRESS_MASK</a>&#160;&#160;&#160;0b01111111</td></tr>
+<tr class="separator:aed2f0834b80bd40efee88700fd7a5f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4feaced0d41894d5c5b74f1a687a1cc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a4feaced0d41894d5c5b74f1a687a1cc6">Bl</a>&#160;&#160;&#160;0b00001000</td></tr>
+<tr class="separator:a4feaced0d41894d5c5b74f1a687a1cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ef25ebfe582f7bf0d93e2770548e2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab5ef25ebfe582f7bf0d93e2770548e2c">En</a>&#160;&#160;&#160;0b00000100</td></tr>
+<tr class="separator:ab5ef25ebfe582f7bf0d93e2770548e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b6a2661a04ebbc1b3f38da70306814"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a98b6a2661a04ebbc1b3f38da70306814">Rw</a>&#160;&#160;&#160;0b00000010</td></tr>
+<tr class="separator:a98b6a2661a04ebbc1b3f38da70306814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345d1a871beb9e772c3bf9ef75412bb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a345d1a871beb9e772c3bf9ef75412bb5">Rs</a>&#160;&#160;&#160;0b00000001</td></tr>
+<tr class="separator:a345d1a871beb9e772c3bf9ef75412bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4a9596af8bbfbd7472da7812ca6fc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8d4a9596af8bbfbd7472da7812ca6fc6">LCD_INIT</a>&#160;&#160;&#160;((0b00000000 | En) &amp; ~Rs) &amp; (~Rw)</td></tr>
+<tr class="separator:a8d4a9596af8bbfbd7472da7812ca6fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647a546e11bfb688586e35087df7fcc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a647a546e11bfb688586e35087df7fcc1">LCD_8BIT_INIT</a>&#160;&#160;&#160;0b00110000</td></tr>
+<tr class="separator:a647a546e11bfb688586e35087df7fcc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53daf8098a6d8c6703540e9e883af1de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a53daf8098a6d8c6703540e9e883af1de">LCD_4BIT_INIT</a>&#160;&#160;&#160;0b00100000</td></tr>
+<tr class="separator:a53daf8098a6d8c6703540e9e883af1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdd13afe8efcfbde4d82805e0b9758c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#abbdd13afe8efcfbde4d82805e0b9758c">LCD_PCF8574_ADDR</a>&#160;&#160;&#160;0x27</td></tr>
+<tr class="separator:abbdd13afe8efcfbde4d82805e0b9758c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0d13bc9f51f3ba51c9caa5898e77e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aef0d13bc9f51f3ba51c9caa5898e77e8">LCD_PCF8574_WEAK_PU</a>&#160;&#160;&#160;0b11110000</td></tr>
+<tr class="separator:aef0d13bc9f51f3ba51c9caa5898e77e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc03e8cbd07c62ce2e26b190c66b1d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#affc03e8cbd07c62ce2e26b190c66b1d5">LCD_BUSY_FLAG_MASK</a>&#160;&#160;&#160;0b10000000</td></tr>
+<tr class="separator:affc03e8cbd07c62ce2e26b190c66b1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016b95bffe9e472b5afeac7288360d60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a016b95bffe9e472b5afeac7288360d60">LCD_ADDRESS_COUNTER_MASK</a>&#160;&#160;&#160;0b01111111</td></tr>
+<tr class="separator:a016b95bffe9e472b5afeac7288360d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae78cd0d04b19760d362972fe9b89ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#adae78cd0d04b19760d362972fe9b89ec">LCD_MAX_COLS</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:adae78cd0d04b19760d362972fe9b89ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ea70242c5ca6ad568f9857d2f19f5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a77ea70242c5ca6ad568f9857d2f19f5d">LCD_MAX_ROWS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a77ea70242c5ca6ad568f9857d2f19f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30f9eb729142201bec6ef0aa45e5c07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac30f9eb729142201bec6ef0aa45e5c07">LCD_LINE1</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ac30f9eb729142201bec6ef0aa45e5c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2c59879d4dca634a1ba6a2769e4ee6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aee2c59879d4dca634a1ba6a2769e4ee6">LCD_LINE2</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:aee2c59879d4dca634a1ba6a2769e4ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2ee32835c7649e5da01563407d8665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a3a2ee32835c7649e5da01563407d8665">LCD_LINE3</a>&#160;&#160;&#160;0x14</td></tr>
+<tr class="separator:a3a2ee32835c7649e5da01563407d8665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fc99e0a8ac2eb3504e94b0a771234f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a11fc99e0a8ac2eb3504e94b0a771234f">LCD_LINE4</a>&#160;&#160;&#160;0x54</td></tr>
+<tr class="separator:a11fc99e0a8ac2eb3504e94b0a771234f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a13acefd0d11196ff8c6daa2ff3ed2d29"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a13acefd0d11196ff8c6daa2ff3ed2d29">LCDsend</a> (unsigned char value, unsigned char mode)</td></tr>
+<tr class="separator:a13acefd0d11196ff8c6daa2ff3ed2d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597dd7a0e98c704c6f7fab1a3c89feaf"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a597dd7a0e98c704c6f7fab1a3c89feaf">LCDreceive</a> (unsigned char RsMode)</td></tr>
+<tr class="separator:a597dd7a0e98c704c6f7fab1a3c89feaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc403c359b1c0e6f5708ed4fc5d4645c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#afc403c359b1c0e6f5708ed4fc5d4645c">LCDwrite4bits</a> (unsigned char value)</td></tr>
+<tr class="separator:afc403c359b1c0e6f5708ed4fc5d4645c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a36ec725b905147e9031614f961b68"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aa8a36ec725b905147e9031614f961b68">LCDread4bits</a> (unsigned char RsEnMode)</td></tr>
+<tr class="separator:aa8a36ec725b905147e9031614f961b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aff31e8adfbce1c457445ae3badc956"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a0aff31e8adfbce1c457445ae3badc956">LCDpulseEnableNeg</a> (unsigned char value)</td></tr>
+<tr class="separator:a0aff31e8adfbce1c457445ae3badc956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7fc797af790f107c6a440ec8c632ea1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aa7fc797af790f107c6a440ec8c632ea1">LCDpulseEnablePos</a> (unsigned char value)</td></tr>
+<tr class="separator:aa7fc797af790f107c6a440ec8c632ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7787eae6330b47f00799165d13d9541"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ad7787eae6330b47f00799165d13d9541">LCDwritePCF8574</a> (unsigned char value)</td></tr>
+<tr class="separator:ad7787eae6330b47f00799165d13d9541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc33705b3442b2b64da0e37c66e937bd"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#afc33705b3442b2b64da0e37c66e937bd">LCDreadPCF8574</a> (void)</td></tr>
+<tr class="separator:afc33705b3442b2b64da0e37c66e937bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa53c9d40f3aa552a9974cd55ac510cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aa53c9d40f3aa552a9974cd55ac510cb3">LCD_Init</a> (void)</td></tr>
+<tr class="separator:aa53c9d40f3aa552a9974cd55ac510cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c650f49a8f9a9a92f51688900e742c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ae9c650f49a8f9a9a92f51688900e742c">LCD_Write_Char</a> (char message)</td></tr>
+<tr class="separator:ae9c650f49a8f9a9a92f51688900e742c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b06fe894038f90a9f53e99e3fc8fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a65b06fe894038f90a9f53e99e3fc8fbf">LCD_Write_Str</a> (const char *message)</td></tr>
+<tr class="separator:a65b06fe894038f90a9f53e99e3fc8fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e765a7041cb850f82f1e7b36ef4898"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a28e765a7041cb850f82f1e7b36ef4898">LCDclear</a> (void)</td></tr>
+<tr class="separator:a28e765a7041cb850f82f1e7b36ef4898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad74df554eff3cd08ef61efdc72e735d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ad74df554eff3cd08ef61efdc72e735d6">LCDhome</a> (void)</td></tr>
+<tr class="separator:ad74df554eff3cd08ef61efdc72e735d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60bdd1a73fbc04c8e182c91c27a04915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a60bdd1a73fbc04c8e182c91c27a04915">LCDsetCursor</a> (unsigned char col, unsigned char row)</td></tr>
+<tr class="separator:a60bdd1a73fbc04c8e182c91c27a04915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee74df42657e7a190b4fbf6933255a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aee74df42657e7a190b4fbf6933255a9c">LCDdisplayOff</a> (void)</td></tr>
+<tr class="separator:aee74df42657e7a190b4fbf6933255a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32fe62f95ed35ea3bafa8a6771e63b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a32fe62f95ed35ea3bafa8a6771e63b04">LCDdisplayOn</a> (void)</td></tr>
+<tr class="separator:a32fe62f95ed35ea3bafa8a6771e63b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c105a2127f1cb106a3eb671cff58d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a7c105a2127f1cb106a3eb671cff58d44">LCDcursorOff</a> (void)</td></tr>
+<tr class="separator:a7c105a2127f1cb106a3eb671cff58d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bbb083e06533b2f5407bfdeb6017d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a15bbb083e06533b2f5407bfdeb6017d9">LCDcursorOn</a> (void)</td></tr>
+<tr class="separator:a15bbb083e06533b2f5407bfdeb6017d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9144503676fb80a80a0ede7f0449eca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ae9144503676fb80a80a0ede7f0449eca">LCDblinkOff</a> (void)</td></tr>
+<tr class="separator:ae9144503676fb80a80a0ede7f0449eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba1e91a65ca3292c122d8023dbcb4e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a8ba1e91a65ca3292c122d8023dbcb4e1">LCDblinkOn</a> (void)</td></tr>
+<tr class="separator:a8ba1e91a65ca3292c122d8023dbcb4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81901c738652518834c1b139e8047aca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a81901c738652518834c1b139e8047aca">LCDscrollDisplayLeft</a> (void)</td></tr>
+<tr class="separator:a81901c738652518834c1b139e8047aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4b6e0943d25788b87464b3c49e4bfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ade4b6e0943d25788b87464b3c49e4bfe">LCDscrollDisplayRight</a> (void)</td></tr>
+<tr class="separator:ade4b6e0943d25788b87464b3c49e4bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5052618da28a47d1dc2f879a8c7ee884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a5052618da28a47d1dc2f879a8c7ee884">LCDleftToRight</a> (void)</td></tr>
+<tr class="separator:a5052618da28a47d1dc2f879a8c7ee884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113425757094ab857a93d30574d9392c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a113425757094ab857a93d30574d9392c">LCDrightToLeft</a> (void)</td></tr>
+<tr class="separator:a113425757094ab857a93d30574d9392c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79cea7d286f1df79fc31521ed4b6ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ad79cea7d286f1df79fc31521ed4b6ac5">LCDautoscroll</a> (void)</td></tr>
+<tr class="separator:ad79cea7d286f1df79fc31521ed4b6ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1eb1e3764fe0bb405a5f04946728631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ae1eb1e3764fe0bb405a5f04946728631">LCDnoAutoscroll</a> (void)</td></tr>
+<tr class="separator:ae1eb1e3764fe0bb405a5f04946728631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4643617a491fd2e6901091bb2df1a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#aa4643617a491fd2e6901091bb2df1a44">LCDcreateChar</a> (unsigned char location, unsigned char charmap[])</td></tr>
+<tr class="separator:aa4643617a491fd2e6901091bb2df1a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074d56ec773c0051845931bf60f753b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a074d56ec773c0051845931bf60f753b7">LCDnoBacklight</a> (void)</td></tr>
+<tr class="separator:a074d56ec773c0051845931bf60f753b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac412e44bd7d29501c93d923417615ae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac412e44bd7d29501c93d923417615ae8">LCDbacklight</a> (void)</td></tr>
+<tr class="separator:ac412e44bd7d29501c93d923417615ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08a4ca7b7b6c57978927c5ff3dc358a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ad08a4ca7b7b6c57978927c5ff3dc358a">LCDcommandWrite</a> (unsigned char value)</td></tr>
+<tr class="separator:ad08a4ca7b7b6c57978927c5ff3dc358a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8ca995daf87f930f349b84b96480eb"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a5c8ca995daf87f930f349b84b96480eb">LCDcommandRead</a> (void)</td></tr>
+<tr class="separator:a5c8ca995daf87f930f349b84b96480eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997716073ea22e27a90103f6dc1c5e7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a997716073ea22e27a90103f6dc1c5e7c">LCDdataWrite</a> (unsigned char value)</td></tr>
+<tr class="separator:a997716073ea22e27a90103f6dc1c5e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3122c5d0270f7f7fd78856e1cc1e5c"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a7d3122c5d0270f7f7fd78856e1cc1e5c">LCDdataRead</a> (void)</td></tr>
+<tr class="separator:a7d3122c5d0270f7f7fd78856e1cc1e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd267316fc24a179e8cc0449125e3244"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#abd267316fc24a179e8cc0449125e3244">LCDbusy</a> (void)</td></tr>
+<tr class="separator:abd267316fc24a179e8cc0449125e3244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38e01871da0c147552eac02f211af21d"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a38e01871da0c147552eac02f211af21d">LCDaddressCounter</a> (void)</td></tr>
+<tr class="separator:a38e01871da0c147552eac02f211af21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fb97cc5cb16158e8a78bd240a81066"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ab3fb97cc5cb16158e8a78bd240a81066">LCDreadDDRam</a> (unsigned char address)</td></tr>
+<tr class="separator:ab3fb97cc5cb16158e8a78bd240a81066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac625c945546f1254c9123340b4c5414b"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac625c945546f1254c9123340b4c5414b">LCDreadCGRam</a> (unsigned char address)</td></tr>
+<tr class="separator:ac625c945546f1254c9123340b4c5414b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac9683cf1eedc10de7c085f1462a1b28c"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#ac9683cf1eedc10de7c085f1462a1b28c">_functionset</a> = 0</td></tr>
+<tr class="separator:ac9683cf1eedc10de7c085f1462a1b28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9339a041268b3108436f28c231265507"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a9339a041268b3108436f28c231265507">_entrymodeset</a> = 0</td></tr>
+<tr class="separator:a9339a041268b3108436f28c231265507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761d0fd852727b89d0215131f18f5175"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a761d0fd852727b89d0215131f18f5175">_displayfunction</a> = 0</td></tr>
+<tr class="separator:a761d0fd852727b89d0215131f18f5175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98fd5b25152758219808e1c105eebed9"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a98fd5b25152758219808e1c105eebed9">_displaycontrol</a> = 0</td></tr>
+<tr class="separator:a98fd5b25152758219808e1c105eebed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e77ebd2a672556345cd718c13e2d829"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a3e77ebd2a672556345cd718c13e2d829">_numlines</a> = 0</td></tr>
+<tr class="separator:a3e77ebd2a672556345cd718c13e2d829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c08f6d33d76e94094bb999cb6e6a8e5"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCD__I2C__PCF8574_8c.html#a5c08f6d33d76e94094bb999cb6e6a8e5">_backlightval</a> = 0</td></tr>
+<tr class="separator:a5c08f6d33d76e94094bb999cb6e6a8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'defines'</h2>
+<a id="a4feaced0d41894d5c5b74f1a687a1cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4feaced0d41894d5c5b74f1a687a1cc6">&#9670;&nbsp;</a></span>Bl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Bl&#160;&#160;&#160;0b00001000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00072">72</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">LCDbacklight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">LCDnoBacklight()</a>.</p>
+
+</div>
+</div>
+<a id="ab5ef25ebfe582f7bf0d93e2770548e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ef25ebfe582f7bf0d93e2770548e2c">&#9670;&nbsp;</a></span>En</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define En&#160;&#160;&#160;0b00000100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00073">73</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00470">LCDpulseEnableNeg()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00478">LCDpulseEnablePos()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00430">LCDsend()</a>.</p>
+
+</div>
+</div>
+<a id="a53daf8098a6d8c6703540e9e883af1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53daf8098a6d8c6703540e9e883af1de">&#9670;&nbsp;</a></span>LCD_4BIT_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_4BIT_INIT&#160;&#160;&#160;0b00100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00080">80</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a647a546e11bfb688586e35087df7fcc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647a546e11bfb688586e35087df7fcc1">&#9670;&nbsp;</a></span>LCD_8BIT_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_8BIT_INIT&#160;&#160;&#160;0b00110000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00079">79</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a016b95bffe9e472b5afeac7288360d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016b95bffe9e472b5afeac7288360d60">&#9670;&nbsp;</a></span>LCD_ADDRESS_COUNTER_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_ADDRESS_COUNTER_MASK&#160;&#160;&#160;0b01111111</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00086">86</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00409">LCDaddressCounter()</a>.</p>
+
+</div>
+</div>
+<a id="a45ceab13b2dd69220290a91df577005a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ceab13b2dd69220290a91df577005a">&#9670;&nbsp;</a></span>LCD_BLINKING_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_BLINKING_OFF&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00045">45</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a058503e5404981067ac6a84027a41cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058503e5404981067ac6a84027a41cc0">&#9670;&nbsp;</a></span>LCD_BLINKING_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_BLINKING_ON&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00044">44</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">LCDblinkOn()</a>.</p>
+
+</div>
+</div>
+<a id="affc03e8cbd07c62ce2e26b190c66b1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc03e8cbd07c62ce2e26b190c66b1d5">&#9670;&nbsp;</a></span>LCD_BUSY_FLAG_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_BUSY_FLAG_MASK&#160;&#160;&#160;0b10000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00085">85</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00405">LCDbusy()</a>.</p>
+
+</div>
+</div>
+<a id="ab3361a30e03882f3e8382bddd65dfceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3361a30e03882f3e8382bddd65dfceb">&#9670;&nbsp;</a></span>LCD_CG_RAM_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CG_RAM_ADDRESS&#160;&#160;&#160;0x40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00063">63</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00366">LCDcreateChar()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00419">LCDreadCGRam()</a>.</p>
+
+</div>
+</div>
+<a id="ac4b762513ec4f4e0963ed823a7a0406d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b762513ec4f4e0963ed823a7a0406d">&#9670;&nbsp;</a></span>LCD_CG_RAM_ADDRESS_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CG_RAM_ADDRESS_MASK&#160;&#160;&#160;0b00111111</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00064">64</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00419">LCDreadCGRam()</a>.</p>
+
+</div>
+</div>
+<a id="a3f2897b31d9b8ee5ada65f840adb635b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2897b31d9b8ee5ada65f840adb635b">&#9670;&nbsp;</a></span>LCD_CLEAR_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CLEAR_DISPLAY&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00027">27</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>.</p>
+
+</div>
+</div>
+<a id="a7a6a930d205b2819be910af194576dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6a930d205b2819be910af194576dca">&#9670;&nbsp;</a></span>LCD_CURSOR_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CURSOR_OFF&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00043">43</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a8dae7021acb10d4e5f8458a5fba78729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dae7021acb10d4e5f8458a5fba78729">&#9670;&nbsp;</a></span>LCD_CURSOR_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CURSOR_ON&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00042">42</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00307">LCDcursorOn()</a>.</p>
+
+</div>
+</div>
+<a id="a8d4f53c5f381bd5fcd9d73fe001d8557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4f53c5f381bd5fcd9d73fe001d8557">&#9670;&nbsp;</a></span>LCD_CURSOR_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CURSOR_SHIFT&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00050">50</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="a105aa63c2514ab5d39a834b465247fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105aa63c2514ab5d39a834b465247fba">&#9670;&nbsp;</a></span>LCD_DD_RAM_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DD_RAM_ADDRESS&#160;&#160;&#160;0x80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00066">66</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00413">LCDreadDDRam()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="aed2f0834b80bd40efee88700fd7a5f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2f0834b80bd40efee88700fd7a5f75">&#9670;&nbsp;</a></span>LCD_DD_RAM_ADDRESS_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DD_RAM_ADDRESS_MASK&#160;&#160;&#160;0b01111111</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00067">67</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00413">LCDreadDDRam()</a>.</p>
+
+</div>
+</div>
+<a id="ac2021cdfbf4fbe2b0ca6cf9afae5391c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2021cdfbf4fbe2b0ca6cf9afae5391c">&#9670;&nbsp;</a></span>LCD_DECREMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DECREMENT&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00034">34</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="ab1b96426e59139b68ae95df45d697087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b96426e59139b68ae95df45d697087">&#9670;&nbsp;</a></span>LCD_DISPLAY_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DISPLAY_OFF&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00041">41</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a846dac5d1bb72bef7a76ee110c0445b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846dac5d1bb72bef7a76ee110c0445b6">&#9670;&nbsp;</a></span>LCD_DISPLAY_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DISPLAY_ON&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00040">40</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">LCDdisplayOff()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">LCDdisplayOn()</a>.</p>
+
+</div>
+</div>
+<a id="a15534510d6979ed7dde8279d63425f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15534510d6979ed7dde8279d63425f21">&#9670;&nbsp;</a></span>LCD_DISPLAY_ON_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DISPLAY_ON_OFF&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">39</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">LCDblinkOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00307">LCDcursorOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">LCDdisplayOff()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">LCDdisplayOn()</a>.</p>
+
+</div>
+</div>
+<a id="af28b516fdfb684933ae1384c73882714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28b516fdfb684933ae1384c73882714">&#9670;&nbsp;</a></span>LCD_DISPLAY_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DISPLAY_SHIFT&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00049">49</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">LCDscrollDisplayLeft()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">LCDscrollDisplayRight()</a>.</p>
+
+</div>
+</div>
+<a id="ae5e77a91b0fef0c36af29424a1ee2da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e77a91b0fef0c36af29424a1ee2da1">&#9670;&nbsp;</a></span>LCD_ENTRY_MODE_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_ENTRY_MODE_SET&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">32</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00351">LCDautoscroll()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00337">LCDleftToRight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00358">LCDnoAutoscroll()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00344">LCDrightToLeft()</a>.</p>
+
+</div>
+</div>
+<a id="a43e027860da15021563ab176fba8a391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e027860da15021563ab176fba8a391">&#9670;&nbsp;</a></span>LCD_FONT_5_10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_FONT_5_10&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00060">60</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="a4ee5e8ee42282148e9c6c7b44f56f6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee5e8ee42282148e9c6c7b44f56f6a9">&#9670;&nbsp;</a></span>LCD_FONT_5_7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_FONT_5_7&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00061">61</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="af8ec7e043a3b67ee423b97783d08aeb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ec7e043a3b67ee423b97783d08aeb1">&#9670;&nbsp;</a></span>LCD_FUNCTION_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_FUNCTION_SET&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00055">55</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="ab1fb2568cd5b8fb0f9103652a3deb895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fb2568cd5b8fb0f9103652a3deb895">&#9670;&nbsp;</a></span>LCD_INCREMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_INCREMENT&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00033">33</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00337">LCDleftToRight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00344">LCDrightToLeft()</a>.</p>
+
+</div>
+</div>
+<a id="a8d4a9596af8bbfbd7472da7812ca6fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4a9596af8bbfbd7472da7812ca6fc6">&#9670;&nbsp;</a></span>LCD_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_INIT&#160;&#160;&#160;((0b00000000 | En) &amp; ~Rs) &amp; (~Rw)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00078">78</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="adce3fff507d4da176b47f680688c14a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce3fff507d4da176b47f680688c14a3">&#9670;&nbsp;</a></span>LCD_INTF4BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_INTF4BITS&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00057">57</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="aa845effe98436f945d3b3a2d849a7a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa845effe98436f945d3b3a2d849a7a6b">&#9670;&nbsp;</a></span>LCD_INTF8BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_INTF8BITS&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00056">56</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="ac30f9eb729142201bec6ef0aa45e5c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac30f9eb729142201bec6ef0aa45e5c07">&#9670;&nbsp;</a></span>LCD_LINE1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_LINE1&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00143">143</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="aee2c59879d4dca634a1ba6a2769e4ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2c59879d4dca634a1ba6a2769e4ee6">&#9670;&nbsp;</a></span>LCD_LINE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_LINE2&#160;&#160;&#160;0x40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00144">144</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="a3a2ee32835c7649e5da01563407d8665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2ee32835c7649e5da01563407d8665">&#9670;&nbsp;</a></span>LCD_LINE3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_LINE3&#160;&#160;&#160;0x14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00145">145</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="a11fc99e0a8ac2eb3504e94b0a771234f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11fc99e0a8ac2eb3504e94b0a771234f">&#9670;&nbsp;</a></span>LCD_LINE4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_LINE4&#160;&#160;&#160;0x54</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00146">146</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="adae78cd0d04b19760d362972fe9b89ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae78cd0d04b19760d362972fe9b89ec">&#9670;&nbsp;</a></span>LCD_MAX_COLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_MAX_COLS&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00087">87</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="a77ea70242c5ca6ad568f9857d2f19f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ea70242c5ca6ad568f9857d2f19f5d">&#9670;&nbsp;</a></span>LCD_MAX_ROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_MAX_ROWS&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00088">88</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a7d145bebc4487858e5f4d1b5c7a49337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d145bebc4487858e5f4d1b5c7a49337">&#9670;&nbsp;</a></span>LCD_MV_CUR_SHIFT_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_MV_CUR_SHIFT_DISPLAY&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00048">48</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">LCDscrollDisplayLeft()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">LCDscrollDisplayRight()</a>.</p>
+
+</div>
+</div>
+<a id="a5444cde196d8c0be6ed0e7ad0c59968a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5444cde196d8c0be6ed0e7ad0c59968a">&#9670;&nbsp;</a></span>LCD_ONE_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_ONE_LINE&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00059">59</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+</div>
+</div>
+<a id="abbdd13afe8efcfbde4d82805e0b9758c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbdd13afe8efcfbde4d82805e0b9758c">&#9670;&nbsp;</a></span>LCD_PCF8574_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PCF8574_ADDR&#160;&#160;&#160;0x27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00082">82</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00494">LCDreadPCF8574()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+</div>
+</div>
+<a id="aef0d13bc9f51f3ba51c9caa5898e77e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0d13bc9f51f3ba51c9caa5898e77e8">&#9670;&nbsp;</a></span>LCD_PCF8574_WEAK_PU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PCF8574_WEAK_PU&#160;&#160;&#160;0b11110000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00083">83</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a>.</p>
+
+</div>
+</div>
+<a id="a8f9bf7b2d236dfd31791e1c178e43e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9bf7b2d236dfd31791e1c178e43e74">&#9670;&nbsp;</a></span>LCD_RETURN_HOME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_RETURN_HOME&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00029">29</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00270">LCDhome()</a>.</p>
+
+</div>
+</div>
+<a id="a941377571f34b9d898b61ce89f10226d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941377571f34b9d898b61ce89f10226d">&#9670;&nbsp;</a></span>LCD_SHIFT_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SHIFT_LEFT&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00052">52</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a8c07c63f30fc7379224ad655028bdd3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c07c63f30fc7379224ad655028bdd3f">&#9670;&nbsp;</a></span>LCD_SHIFT_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SHIFT_OFF&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00036">36</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="ab86f91a1de3fe872625d466c155d9101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab86f91a1de3fe872625d466c155d9101">&#9670;&nbsp;</a></span>LCD_SHIFT_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SHIFT_ON&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00035">35</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00351">LCDautoscroll()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00358">LCDnoAutoscroll()</a>.</p>
+
+</div>
+</div>
+<a id="a8ab3108396a0d33dbf7f3ab6477ba01d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab3108396a0d33dbf7f3ab6477ba01d">&#9670;&nbsp;</a></span>LCD_SHIFT_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_SHIFT_RIGHT&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00051">51</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">LCDscrollDisplayLeft()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">LCDscrollDisplayRight()</a>.</p>
+
+</div>
+</div>
+<a id="ad6c9684cdd2b844f304e5fd4a5b3872b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c9684cdd2b844f304e5fd4a5b3872b">&#9670;&nbsp;</a></span>LCD_TWO_LINES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_TWO_LINES&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00058">58</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a345d1a871beb9e772c3bf9ef75412bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345d1a871beb9e772c3bf9ef75412bb5">&#9670;&nbsp;</a></span>Rs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rs&#160;&#160;&#160;0b00000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00075">75</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00393">LCDcommandRead()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00401">LCDdataRead()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">LCDdataWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a98b6a2661a04ebbc1b3f38da70306814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b6a2661a04ebbc1b3f38da70306814">&#9670;&nbsp;</a></span>Rw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rw&#160;&#160;&#160;0b00000010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00074">74</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">LCDread4bits()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">LCDwrite4bits()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="aa53c9d40f3aa552a9974cd55ac510cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53c9d40f3aa552a9974cd55ac510cb3">&#9670;&nbsp;</a></span>LCD_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">179</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00164">_backlightval</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00162">_displaycontrol</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">_entrymodeset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00159">_functionset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00163">_numlines</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00072">Bl</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00080">LCD_4BIT_INIT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00079">LCD_8BIT_INIT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00045">LCD_BLINKING_OFF</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00043">LCD_CURSOR_OFF</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00041">LCD_DISPLAY_OFF</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00049">LCD_DISPLAY_SHIFT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">LCD_ENTRY_MODE_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00061">LCD_FONT_5_7</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00055">LCD_FUNCTION_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00033">LCD_INCREMENT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00078">LCD_INIT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00057">LCD_INTF4BITS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00088">LCD_MAX_ROWS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00048">LCD_MV_CUR_SHIFT_DISPLAY</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00052">LCD_SHIFT_LEFT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00036">LCD_SHIFT_OFF</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00058">LCD_TWO_LINES</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">LCDdisplayOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">LCDdisplayOn()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">LCDwrite4bits()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00094">main()</a>.</p>
+
+</div>
+</div>
+<a id="ae9c650f49a8f9a9a92f51688900e742c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c650f49a8f9a9a92f51688900e742c">&#9670;&nbsp;</a></span>LCD_Write_Char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Write_Char </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00247">247</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">LCDdataWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a65b06fe894038f90a9f53e99e3fc8fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b06fe894038f90a9f53e99e3fc8fbf">&#9670;&nbsp;</a></span>LCD_Write_Str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Write_Str </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">252</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">LCDdataWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a38e01871da0c147552eac02f211af21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38e01871da0c147552eac02f211af21d">&#9670;&nbsp;</a></span>LCDaddressCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDaddressCounter </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00409">409</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00086">LCD_ADDRESS_COUNTER_MASK</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00393">LCDcommandRead()</a>.</p>
+
+</div>
+</div>
+<a id="ad79cea7d286f1df79fc31521ed4b6ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad79cea7d286f1df79fc31521ed4b6ac5">&#9670;&nbsp;</a></span>LCDautoscroll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDautoscroll </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00351">351</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">_entrymodeset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">LCD_ENTRY_MODE_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00035">LCD_SHIFT_ON</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="ac412e44bd7d29501c93d923417615ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac412e44bd7d29501c93d923417615ae8">&#9670;&nbsp;</a></span>LCDbacklight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDbacklight </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">380</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00164">_backlightval</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00072">Bl</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00494">LCDreadPCF8574()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>.</p>
+
+</div>
+</div>
+<a id="ae9144503676fb80a80a0ede7f0449eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9144503676fb80a80a0ede7f0449eca">&#9670;&nbsp;</a></span>LCDblinkOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDblinkOff </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">313</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00044">LCD_BLINKING_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a8ba1e91a65ca3292c122d8023dbcb4e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ba1e91a65ca3292c122d8023dbcb4e1">&#9670;&nbsp;</a></span>LCDblinkOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDblinkOn </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">318</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00044">LCD_BLINKING_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="abd267316fc24a179e8cc0449125e3244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd267316fc24a179e8cc0449125e3244">&#9670;&nbsp;</a></span>LCDbusy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDbusy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00405">405</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00085">LCD_BUSY_FLAG_MASK</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00393">LCDcommandRead()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00270">LCDhome()</a>.</p>
+
+</div>
+</div>
+<a id="a28e765a7041cb850f82f1e7b36ef4898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e765a7041cb850f82f1e7b36ef4898">&#9670;&nbsp;</a></span>LCDclear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDclear </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">261</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00027">LCD_CLEAR_DISPLAY</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00405">LCDbusy()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="a5c8ca995daf87f930f349b84b96480eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8ca995daf87f930f349b84b96480eb">&#9670;&nbsp;</a></span>LCDcommandRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDcommandRead </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00393">393</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00075">Rs</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00409">LCDaddressCounter()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00405">LCDbusy()</a>.</p>
+
+</div>
+</div>
+<a id="ad08a4ca7b7b6c57978927c5ff3dc358a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad08a4ca7b7b6c57978927c5ff3dc358a">&#9670;&nbsp;</a></span>LCDcommandWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDcommandWrite </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">389</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00430">LCDsend()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00075">Rs</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00351">LCDautoscroll()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">LCDblinkOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00261">LCDclear()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00366">LCDcreateChar()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00307">LCDcursorOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">LCDdisplayOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">LCDdisplayOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00270">LCDhome()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00337">LCDleftToRight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00358">LCDnoAutoscroll()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00419">LCDreadCGRam()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00413">LCDreadDDRam()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00344">LCDrightToLeft()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">LCDscrollDisplayLeft()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">LCDscrollDisplayRight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+<a id="aa4643617a491fd2e6901091bb2df1a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4643617a491fd2e6901091bb2df1a44">&#9670;&nbsp;</a></span>LCDcreateChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDcreateChar </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>charmap</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00366">366</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00063">LCD_CG_RAM_ADDRESS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">LCDdataWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a7c105a2127f1cb106a3eb671cff58d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c105a2127f1cb106a3eb671cff58d44">&#9670;&nbsp;</a></span>LCDcursorOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDcursorOff </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">302</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00042">LCD_CURSOR_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a> y <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a>.</p>
+
+</div>
+</div>
+<a id="a15bbb083e06533b2f5407bfdeb6017d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15bbb083e06533b2f5407bfdeb6017d9">&#9670;&nbsp;</a></span>LCDcursorOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDcursorOn </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00307">307</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00042">LCD_CURSOR_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a7d3122c5d0270f7f7fd78856e1cc1e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3122c5d0270f7f7fd78856e1cc1e5c">&#9670;&nbsp;</a></span>LCDdataRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDdataRead </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00401">401</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00075">Rs</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00419">LCDreadCGRam()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00413">LCDreadDDRam()</a>.</p>
+
+</div>
+</div>
+<a id="a997716073ea22e27a90103f6dc1c5e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997716073ea22e27a90103f6dc1c5e7c">&#9670;&nbsp;</a></span>LCDdataWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDdataWrite </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">397</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00430">LCDsend()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00075">Rs</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00247">LCD_Write_Char()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00252">LCD_Write_Str()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00366">LCDcreateChar()</a>.</p>
+
+</div>
+</div>
+<a id="aee74df42657e7a190b4fbf6933255a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee74df42657e7a190b4fbf6933255a9c">&#9670;&nbsp;</a></span>LCDdisplayOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDdisplayOff </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">291</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00040">LCD_DISPLAY_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a32fe62f95ed35ea3bafa8a6771e63b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32fe62f95ed35ea3bafa8a6771e63b04">&#9670;&nbsp;</a></span>LCDdisplayOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDdisplayOn </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">296</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">_displayfunction</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00040">LCD_DISPLAY_ON</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00039">LCD_DISPLAY_ON_OFF</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="ad74df554eff3cd08ef61efdc72e735d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74df554eff3cd08ef61efdc72e735d6">&#9670;&nbsp;</a></span>LCDhome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDhome </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00270">270</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00029">LCD_RETURN_HOME</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00405">LCDbusy()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a5052618da28a47d1dc2f879a8c7ee884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5052618da28a47d1dc2f879a8c7ee884">&#9670;&nbsp;</a></span>LCDleftToRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDleftToRight </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00337">337</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">_entrymodeset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">LCD_ENTRY_MODE_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00033">LCD_INCREMENT</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="ae1eb1e3764fe0bb405a5f04946728631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1eb1e3764fe0bb405a5f04946728631">&#9670;&nbsp;</a></span>LCDnoAutoscroll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDnoAutoscroll </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00358">358</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">_entrymodeset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">LCD_ENTRY_MODE_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00035">LCD_SHIFT_ON</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a074d56ec773c0051845931bf60f753b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074d56ec773c0051845931bf60f753b7">&#9670;&nbsp;</a></span>LCDnoBacklight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDnoBacklight </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">375</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00164">_backlightval</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00072">Bl</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00494">LCDreadPCF8574()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>.</p>
+
+</div>
+</div>
+<a id="a0aff31e8adfbce1c457445ae3badc956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aff31e8adfbce1c457445ae3badc956">&#9670;&nbsp;</a></span>LCDpulseEnableNeg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LCDpulseEnableNeg </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00470">470</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00073">En</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">LCDread4bits()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">LCDwrite4bits()</a>.</p>
+
+</div>
+</div>
+<a id="aa7fc797af790f107c6a440ec8c632ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fc797af790f107c6a440ec8c632ea1">&#9670;&nbsp;</a></span>LCDpulseEnablePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LCDpulseEnablePos </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00478">478</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00073">En</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">LCDread4bits()</a>.</p>
+
+</div>
+</div>
+<a id="aa8a36ec725b905147e9031614f961b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a36ec725b905147e9031614f961b68">&#9670;&nbsp;</a></span>LCDread4bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned char LCDread4bits </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>RsEnMode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">462</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00470">LCDpulseEnableNeg()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00478">LCDpulseEnablePos()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00494">LCDreadPCF8574()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00074">Rw</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a>.</p>
+
+</div>
+</div>
+<a id="ac625c945546f1254c9123340b4c5414b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac625c945546f1254c9123340b4c5414b">&#9670;&nbsp;</a></span>LCDreadCGRam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDreadCGRam </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00419">419</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00063">LCD_CG_RAM_ADDRESS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00064">LCD_CG_RAM_ADDRESS_MASK</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00401">LCDdataRead()</a>.</p>
+
+</div>
+</div>
+<a id="ab3fb97cc5cb16158e8a78bd240a81066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fb97cc5cb16158e8a78bd240a81066">&#9670;&nbsp;</a></span>LCDreadDDRam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char LCDreadDDRam </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00413">413</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00066">LCD_DD_RAM_ADDRESS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00067">LCD_DD_RAM_ADDRESS_MASK</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00401">LCDdataRead()</a>.</p>
+
+</div>
+</div>
+<a id="afc33705b3442b2b64da0e37c66e937bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc33705b3442b2b64da0e37c66e937bd">&#9670;&nbsp;</a></span>LCDreadPCF8574()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned char LCDreadPCF8574 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00494">494</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00082">LCD_PCF8574_ADDR</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">LCDbacklight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">LCDnoBacklight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">LCDread4bits()</a>.</p>
+
+</div>
+</div>
+<a id="a597dd7a0e98c704c6f7fab1a3c89feaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a597dd7a0e98c704c6f7fab1a3c89feaf">&#9670;&nbsp;</a></span>LCDreceive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned char LCDreceive </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>RsMode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">443</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00073">En</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00083">LCD_PCF8574_WEAK_PU</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00462">LCDread4bits()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00393">LCDcommandRead()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00401">LCDdataRead()</a>.</p>
+
+</div>
+</div>
+<a id="a113425757094ab857a93d30574d9392c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113425757094ab857a93d30574d9392c">&#9670;&nbsp;</a></span>LCDrightToLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDrightToLeft </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00344">344</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">_entrymodeset</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00032">LCD_ENTRY_MODE_SET</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00033">LCD_INCREMENT</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a81901c738652518834c1b139e8047aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81901c738652518834c1b139e8047aca">&#9670;&nbsp;</a></span>LCDscrollDisplayLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDscrollDisplayLeft </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">323</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00162">_displaycontrol</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00049">LCD_DISPLAY_SHIFT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00048">LCD_MV_CUR_SHIFT_DISPLAY</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00051">LCD_SHIFT_RIGHT</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="ade4b6e0943d25788b87464b3c49e4bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4b6e0943d25788b87464b3c49e4bfe">&#9670;&nbsp;</a></span>LCDscrollDisplayRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDscrollDisplayRight </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">329</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00162">_displaycontrol</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00049">LCD_DISPLAY_SHIFT</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00048">LCD_MV_CUR_SHIFT_DISPLAY</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00051">LCD_SHIFT_RIGHT</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a13acefd0d11196ff8c6daa2ff3ed2d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13acefd0d11196ff8c6daa2ff3ed2d29">&#9670;&nbsp;</a></span>LCDsend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LCDsend </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00430">430</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00073">En</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">LCDwrite4bits()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00397">LCDdataWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a60bdd1a73fbc04c8e182c91c27a04915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bdd1a73fbc04c8e182c91c27a04915">&#9670;&nbsp;</a></span>LCDsetCursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCDsetCursor </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">279</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00163">_numlines</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00066">LCD_DD_RAM_ADDRESS</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00143">LCD_LINE1</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00144">LCD_LINE2</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00145">LCD_LINE3</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00146">LCD_LINE4</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00389">LCDcommandWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Bobinadora_8c_source.html#l00427">IniciaBobinado()</a>, <a class="el" href="Bobinadora_8c_source.html#l00164">MensajeBienvenida()</a>, <a class="el" href="Bobinadora_8c_source.html#l00188">MenuConfigGeneral()</a> y <a class="el" href="Bobinadora_8c_source.html#l00523">RepetirBobinado()</a>.</p>
+
+</div>
+</div>
+<a id="afc403c359b1c0e6f5708ed4fc5d4645c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc403c359b1c0e6f5708ed4fc5d4645c">&#9670;&nbsp;</a></span>LCDwrite4bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LCDwrite4bits </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">456</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00470">LCDpulseEnableNeg()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00074">Rw</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00430">LCDsend()</a>.</p>
+
+</div>
+</div>
+<a id="ad7787eae6330b47f00799165d13d9541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7787eae6330b47f00799165d13d9541">&#9670;&nbsp;</a></span>LCDwritePCF8574()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void LCDwritePCF8574 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">487</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00164">_backlightval</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00082">LCD_PCF8574_ADDR</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">LCDbacklight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">LCDnoBacklight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00470">LCDpulseEnableNeg()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00478">LCDpulseEnablePos()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00443">LCDreceive()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00456">LCDwrite4bits()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="a5c08f6d33d76e94094bb999cb6e6a8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c08f6d33d76e94094bb999cb6e6a8e5">&#9670;&nbsp;</a></span>_backlightval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _backlightval = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00164">164</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00380">LCDbacklight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00375">LCDnoBacklight()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00487">LCDwritePCF8574()</a>.</p>
+
+</div>
+</div>
+<a id="a98fd5b25152758219808e1c105eebed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fd5b25152758219808e1c105eebed9">&#9670;&nbsp;</a></span>_displaycontrol</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _displaycontrol = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00162">162</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00323">LCDscrollDisplayLeft()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00329">LCDscrollDisplayRight()</a>.</p>
+
+</div>
+</div>
+<a id="a761d0fd852727b89d0215131f18f5175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761d0fd852727b89d0215131f18f5175">&#9670;&nbsp;</a></span>_displayfunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _displayfunction = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00161">161</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00313">LCDblinkOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00318">LCDblinkOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00302">LCDcursorOff()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00307">LCDcursorOn()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00291">LCDdisplayOff()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00296">LCDdisplayOn()</a>.</p>
+
+</div>
+</div>
+<a id="a9339a041268b3108436f28c231265507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9339a041268b3108436f28c231265507">&#9670;&nbsp;</a></span>_entrymodeset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _entrymodeset = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00160">160</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00351">LCDautoscroll()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00337">LCDleftToRight()</a>, <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00358">LCDnoAutoscroll()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00344">LCDrightToLeft()</a>.</p>
+
+</div>
+</div>
+<a id="ac9683cf1eedc10de7c085f1462a1b28c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9683cf1eedc10de7c085f1462a1b28c">&#9670;&nbsp;</a></span>_functionset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _functionset = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00159">159</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="a3e77ebd2a672556345cd718c13e2d829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e77ebd2a672556345cd718c13e2d829">&#9670;&nbsp;</a></span>_numlines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _numlines = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00163">163</a> del archivo <a class="el" href="LCD__I2C__PCF8574_8c_source.html">LCD_I2C_PCF8574.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00179">LCD_Init()</a> y <a class="el" href="LCD__I2C__PCF8574_8c_source.html#l00279">LCDsetCursor()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,48 @@
+This is makeindex, version 2.15 [TeX Live 2017] (kpathsea + Thai support).
+Scanning input file refman.idx....
+!! Input index error (file = refman.idx, line = 12):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 13):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 14):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 15):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 16):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 17):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 18):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 19):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 20):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 21):
+   -- First argument too long (max 1024).
+
+!! Input index error (file = refman.idx, line = 24):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 25):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 26):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 27):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 28):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 29):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 30):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 31):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 32):
+   -- First argument too long (max 1024).
+!! Input index error (file = refman.idx, line = 33):
+   -- First argument too long (max 1024).
+done (254 entries accepted, 20 rejected).
+Sorting entries.....done (2052 comparisons).
+Generating output file refman.ind....done (541 lines written, 0 warnings).
+Output written in refman.ind.
+Transcript written in refman.ilg.

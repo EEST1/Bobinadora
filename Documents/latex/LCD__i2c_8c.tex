@@ -1,0 +1,330 @@
+\hypertarget{LCD__i2c_8c}{}\section{Referencia del Archivo projects/\+Bobinadora/src/\+L\+C\+D\+\_\+i2c.c}
+\label{LCD__i2c_8c}\index{projects/\+Bobinadora/src/\+L\+C\+D\+\_\+i2c.\+c@{projects/\+Bobinadora/src/\+L\+C\+D\+\_\+i2c.\+c}}
+{\ttfamily \#include \char`\"{}sapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D\+\_\+i2c.\+h\char`\"{}}\newline
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{LCD__i2c_8c_a3c39e271b9c35acd2e256e9a0444b3f2}{auto\+Increment} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a4a1bb35aa3ffa2c63ec4d17ca2b1f0a0}{display\+Left\+Right\+Scroll} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a32ea38ff559c41869cbbcfba7a9200c3}{display\+On\+Off} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a68956080c8ccaa71b396e1ff49dcd7de}{back\+Light\+Control} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_aa2d2f425cc5189eec93b126fad81736a}{print\+At} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_abd6e43619c7b3c4979115eb89f813124}{cursor\+Control} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a1744a4adcc07a61391c890142bc97d1b}{print\+Left\+And\+Right} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_ac42c590ac8b2ba9becadea4d2b4cf696}{control\+Memory\+Reading} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a67d08f9931d79a3acd845832f6511693}{a} (void)
+\item 
+void \hyperlink{LCD__i2c_8c_a3799eab4538ac07bfb6d43003dc021de}{put\+Hex\+String} (unsigned char c, unsigned char r, unsigned char hexval)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_ac1d1eed6a8bbca26af335b9682a6475e}{x} = 0
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a7e184d2af6c2a008483ac8f7192e9412}{hex} \mbox{[}$\,$\mbox{]} = \{ \char`\"{}0123456789\+A\+B\+C\+D\+E\+F\char`\"{} \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a3dbf93338f27e131c652cb9effadcef8}{bell} \mbox{[}8\mbox{]} = \{ 0x04, 0x0e, 0x0e, 0x0e, 0x1f, 0x00, 0x04 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a429dd51056aedf2ef3c8275429bab55a}{note} \mbox{[}8\mbox{]} = \{ 0x02, 0x03, 0x02, 0x0e, 0x1e, 0x0c, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a616d9b45a66a32fff8937aae139b2666}{clock} \mbox{[}8\mbox{]} = \{ 0x00, 0x0e, 0x15, 0x17, 0x11, 0x0e, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_aaa4b42ed375b21856e68e30c6d7d3494}{heart} \mbox{[}8\mbox{]} = \{ 0x00, 0x0a, 0x1f, 0x1f, 0x0e, 0x04, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a05965d956dd8737d2e11c533a9041270}{duck} \mbox{[}8\mbox{]} = \{ 0x00, 0x0c, 0x1d, 0x0f, 0x0f, 0x06, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_ad4c4cd2fa5162134739cb05c4ddf6b79}{check} \mbox{[}8\mbox{]} = \{ 0x00, 0x01, 0x03, 0x16, 0x1c, 0x08, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a5e29f844bd6d921b8f45048b434a1e8f}{cross} \mbox{[}8\mbox{]} = \{ 0x00, 0x1b, 0x0e, 0x04, 0x0e, 0x1b, 0x00 \}
+\item 
+unsigned char \hyperlink{LCD__i2c_8c_a389b525328a3efd29c9e704969289337}{retarrow} \mbox{[}8\mbox{]} = \{ 0x01, 0x01, 0x05, 0x09, 0x1f, 0x08, 0x04 \}
+\item 
+unsigned char $\ast$ \hyperlink{LCD__i2c_8c_add87cf2e6468f395fb0ecd1eaafce2d2}{charmap} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{LCD__i2c_8c_a67d08f9931d79a3acd845832f6511693}\label{LCD__i2c_8c_a67d08f9931d79a3acd845832f6511693}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!a@{a}}
+\index{a@{a}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{a()}{a()}}
+{\footnotesize\ttfamily void a (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 277 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a charmap, hex, L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcreate\+Char(), L\+C\+Dcursor\+Off(), L\+C\+Dhome(), L\+C\+Dread\+C\+G\+Ram(), L\+C\+Dread\+D\+D\+Ram(), L\+C\+Dset\+Cursor(), put\+Hex\+String() y x.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a3c39e271b9c35acd2e256e9a0444b3f2}\label{LCD__i2c_8c_a3c39e271b9c35acd2e256e9a0444b3f2}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!auto\+Increment@{auto\+Increment}}
+\index{auto\+Increment@{auto\+Increment}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{auto\+Increment()}{autoIncrement()}}
+{\footnotesize\ttfamily void auto\+Increment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Funciones de prueba de los comandos del L\+CD 
+
+Definición en la línea 71 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+Dautoscroll(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dno\+Autoscroll() y L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__i2c_8c_a68956080c8ccaa71b396e1ff49dcd7de}\label{LCD__i2c_8c_a68956080c8ccaa71b396e1ff49dcd7de}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!back\+Light\+Control@{back\+Light\+Control}}
+\index{back\+Light\+Control@{back\+Light\+Control}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{back\+Light\+Control()}{backLightControl()}}
+{\footnotesize\ttfamily void back\+Light\+Control (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 149 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dbacklight(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dno\+Backlight(), L\+C\+Dset\+Cursor() y x.
+
+\mbox{\Hypertarget{LCD__i2c_8c_ac42c590ac8b2ba9becadea4d2b4cf696}\label{LCD__i2c_8c_ac42c590ac8b2ba9becadea4d2b4cf696}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!control\+Memory\+Reading@{control\+Memory\+Reading}}
+\index{control\+Memory\+Reading@{control\+Memory\+Reading}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{control\+Memory\+Reading()}{controlMemoryReading()}}
+{\footnotesize\ttfamily void control\+Memory\+Reading (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 244 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a hex, L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Daddress\+Counter(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dbusy(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dcursor\+On(), L\+C\+Dset\+Cursor() y x.
+
+\mbox{\Hypertarget{LCD__i2c_8c_abd6e43619c7b3c4979115eb89f813124}\label{LCD__i2c_8c_abd6e43619c7b3c4979115eb89f813124}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!cursor\+Control@{cursor\+Control}}
+\index{cursor\+Control@{cursor\+Control}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{cursor\+Control()}{cursorControl()}}
+{\footnotesize\ttfamily void cursor\+Control (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 198 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dcursor\+On() y L\+C\+Dhome().
+
+\mbox{\Hypertarget{LCD__i2c_8c_a4a1bb35aa3ffa2c63ec4d17ca2b1f0a0}\label{LCD__i2c_8c_a4a1bb35aa3ffa2c63ec4d17ca2b1f0a0}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!display\+Left\+Right\+Scroll@{display\+Left\+Right\+Scroll}}
+\index{display\+Left\+Right\+Scroll@{display\+Left\+Right\+Scroll}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{display\+Left\+Right\+Scroll()}{displayLeftRightScroll()}}
+{\footnotesize\ttfamily void display\+Left\+Right\+Scroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 99 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dscroll\+Display\+Left(), L\+C\+Dscroll\+Display\+Right(), L\+C\+Dset\+Cursor() y x.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a32ea38ff559c41869cbbcfba7a9200c3}\label{LCD__i2c_8c_a32ea38ff559c41869cbbcfba7a9200c3}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!display\+On\+Off@{display\+On\+Off}}
+\index{display\+On\+Off@{display\+On\+Off}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{display\+On\+Off()}{displayOnOff()}}
+{\footnotesize\ttfamily void display\+On\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 126 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Ddisplay\+Off(), L\+C\+Ddisplay\+On(), L\+C\+Dhome(), L\+C\+Dset\+Cursor() y x.
+
+\mbox{\Hypertarget{LCD__i2c_8c_aa2d2f425cc5189eec93b126fad81736a}\label{LCD__i2c_8c_aa2d2f425cc5189eec93b126fad81736a}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!print\+At@{print\+At}}
+\index{print\+At@{print\+At}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{print\+At()}{printAt()}}
+{\footnotesize\ttfamily void print\+At (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 182 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dclear(), L\+C\+Dcursor\+Off() y L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__i2c_8c_a1744a4adcc07a61391c890142bc97d1b}\label{LCD__i2c_8c_a1744a4adcc07a61391c890142bc97d1b}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!print\+Left\+And\+Right@{print\+Left\+And\+Right}}
+\index{print\+Left\+And\+Right@{print\+Left\+And\+Right}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{print\+Left\+And\+Right()}{printLeftAndRight()}}
+{\footnotesize\ttfamily void print\+Left\+And\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 226 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dleft\+To\+Right(), L\+C\+Dright\+To\+Left() y L\+C\+Dset\+Cursor().
+
+\mbox{\Hypertarget{LCD__i2c_8c_a3799eab4538ac07bfb6d43003dc021de}\label{LCD__i2c_8c_a3799eab4538ac07bfb6d43003dc021de}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!put\+Hex\+String@{put\+Hex\+String}}
+\index{put\+Hex\+String@{put\+Hex\+String}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{put\+Hex\+String()}{putHexString()}}
+{\footnotesize\ttfamily void put\+Hex\+String (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{unsigned char}]{r,  }\item[{unsigned char}]{hexval }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 319 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Hace referencia a hex, L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str() y L\+C\+Dset\+Cursor().
+
+
+
+Referenciado por a().
+
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{LCD__i2c_8c_a3dbf93338f27e131c652cb9effadcef8}\label{LCD__i2c_8c_a3dbf93338f27e131c652cb9effadcef8}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!bell@{bell}}
+\index{bell@{bell}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{bell}{bell}}
+{\footnotesize\ttfamily unsigned char bell\mbox{[}8\mbox{]} = \{ 0x04, 0x0e, 0x0e, 0x0e, 0x1f, 0x00, 0x04 \}}
+
+
+
+Definición en la línea 56 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_add87cf2e6468f395fb0ecd1eaafce2d2}\label{LCD__i2c_8c_add87cf2e6468f395fb0ecd1eaafce2d2}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!charmap@{charmap}}
+\index{charmap@{charmap}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{charmap}{charmap}}
+{\footnotesize\ttfamily unsigned char$\ast$ charmap\mbox{[}8\mbox{]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+= \{ \hyperlink{LCD__i2c_8c_a3dbf93338f27e131c652cb9effadcef8}{bell}, \hyperlink{LCD__i2c_8c_a429dd51056aedf2ef3c8275429bab55a}{note}, \hyperlink{LCD__i2c_8c_a616d9b45a66a32fff8937aae139b2666}{clock}, \hyperlink{LCD__i2c_8c_aaa4b42ed375b21856e68e30c6d7d3494}{heart}, \hyperlink{LCD__i2c_8c_a05965d956dd8737d2e11c533a9041270}{duck}, \hyperlink{LCD__i2c_8c_ad4c4cd2fa5162134739cb05c4ddf6b79}{check}, \hyperlink{LCD__i2c_8c_a5e29f844bd6d921b8f45048b434a1e8f}{cross},
+        \hyperlink{LCD__i2c_8c_a389b525328a3efd29c9e704969289337}{retarrow} \}
+\end{DoxyCode}
+
+
+Definición en la línea 64 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Referenciado por a().
+
+\mbox{\Hypertarget{LCD__i2c_8c_ad4c4cd2fa5162134739cb05c4ddf6b79}\label{LCD__i2c_8c_ad4c4cd2fa5162134739cb05c4ddf6b79}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!check@{check}}
+\index{check@{check}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{check}{check}}
+{\footnotesize\ttfamily unsigned char check\mbox{[}8\mbox{]} = \{ 0x00, 0x01, 0x03, 0x16, 0x1c, 0x08, 0x00 \}}
+
+
+
+Definición en la línea 61 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a616d9b45a66a32fff8937aae139b2666}\label{LCD__i2c_8c_a616d9b45a66a32fff8937aae139b2666}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!clock@{clock}}
+\index{clock@{clock}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily unsigned char clock\mbox{[}8\mbox{]} = \{ 0x00, 0x0e, 0x15, 0x17, 0x11, 0x0e, 0x00 \}}
+
+
+
+Definición en la línea 58 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a5e29f844bd6d921b8f45048b434a1e8f}\label{LCD__i2c_8c_a5e29f844bd6d921b8f45048b434a1e8f}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!cross@{cross}}
+\index{cross@{cross}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{cross}{cross}}
+{\footnotesize\ttfamily unsigned char cross\mbox{[}8\mbox{]} = \{ 0x00, 0x1b, 0x0e, 0x04, 0x0e, 0x1b, 0x00 \}}
+
+
+
+Definición en la línea 62 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a05965d956dd8737d2e11c533a9041270}\label{LCD__i2c_8c_a05965d956dd8737d2e11c533a9041270}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!duck@{duck}}
+\index{duck@{duck}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{duck}{duck}}
+{\footnotesize\ttfamily unsigned char duck\mbox{[}8\mbox{]} = \{ 0x00, 0x0c, 0x1d, 0x0f, 0x0f, 0x06, 0x00 \}}
+
+
+
+Definición en la línea 60 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_aaa4b42ed375b21856e68e30c6d7d3494}\label{LCD__i2c_8c_aaa4b42ed375b21856e68e30c6d7d3494}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!heart@{heart}}
+\index{heart@{heart}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{heart}{heart}}
+{\footnotesize\ttfamily unsigned char heart\mbox{[}8\mbox{]} = \{ 0x00, 0x0a, 0x1f, 0x1f, 0x0e, 0x04, 0x00 \}}
+
+
+
+Definición en la línea 59 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a7e184d2af6c2a008483ac8f7192e9412}\label{LCD__i2c_8c_a7e184d2af6c2a008483ac8f7192e9412}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!hex@{hex}}
+\index{hex@{hex}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{hex}{hex}}
+{\footnotesize\ttfamily unsigned char hex\mbox{[}$\,$\mbox{]} = \{ \char`\"{}0123456789\+A\+B\+C\+D\+E\+F\char`\"{} \}}
+
+
+
+Definición en la línea 55 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Referenciado por a(), control\+Memory\+Reading() y put\+Hex\+String().
+
+\mbox{\Hypertarget{LCD__i2c_8c_a429dd51056aedf2ef3c8275429bab55a}\label{LCD__i2c_8c_a429dd51056aedf2ef3c8275429bab55a}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!note@{note}}
+\index{note@{note}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{note}{note}}
+{\footnotesize\ttfamily unsigned char note\mbox{[}8\mbox{]} = \{ 0x02, 0x03, 0x02, 0x0e, 0x1e, 0x0c, 0x00 \}}
+
+
+
+Definición en la línea 57 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_a389b525328a3efd29c9e704969289337}\label{LCD__i2c_8c_a389b525328a3efd29c9e704969289337}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!retarrow@{retarrow}}
+\index{retarrow@{retarrow}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{retarrow}{retarrow}}
+{\footnotesize\ttfamily unsigned char retarrow\mbox{[}8\mbox{]} = \{ 0x01, 0x01, 0x05, 0x09, 0x1f, 0x08, 0x04 \}}
+
+
+
+Definición en la línea 63 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+\mbox{\Hypertarget{LCD__i2c_8c_ac1d1eed6a8bbca26af335b9682a6475e}\label{LCD__i2c_8c_ac1d1eed6a8bbca26af335b9682a6475e}} 
+\index{L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}!x@{x}}
+\index{x@{x}!L\+C\+D\+\_\+i2c.\+c@{L\+C\+D\+\_\+i2c.\+c}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily unsigned char x = 0}
+
+Conjunto de caracteres predefinidos y caracteres programados especiales 
+
+Definición en la línea 54 del archivo L\+C\+D\+\_\+i2c.\+c.
+
+
+
+Referenciado por a(), back\+Light\+Control(), control\+Memory\+Reading(), display\+Left\+Right\+Scroll() y display\+On\+Off().
+

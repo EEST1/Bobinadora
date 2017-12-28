@@ -1,0 +1,741 @@
+\hypertarget{Bobinadora_8c}{}\section{Referencia del Archivo projects/\+Bobinadora/src/\+Bobinadora.c}
+\label{Bobinadora_8c}\index{projects/\+Bobinadora/src/\+Bobinadora.\+c@{projects/\+Bobinadora/src/\+Bobinadora.\+c}}
+{\ttfamily \#include \char`\"{}sapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D\+\_\+\+I2\+C\+\_\+\+P\+C\+F8574.\+h\char`\"{}}\newline
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Bobinadora_8c_aad28fddcc33bb99bff17d2c95f1ee28a}{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES}~7
+\item 
+\#define \hyperlink{Bobinadora_8c_ab141c2f4969ddb17459e008d7062cc42}{M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE}~46080
+\item 
+\#define \hyperlink{Bobinadora_8c_aabf9c516001d8e5c7c9e593e5a25d249}{D\+E\+R\+E\+C\+HA}~1
+\item 
+\#define \hyperlink{Bobinadora_8c_ad9ef6961fb41b000be06f50ff545f55d}{I\+Z\+Q\+U\+I\+E\+R\+DA}~0
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}{bob\+\_\+state\+\_\+t} \{ \newline
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba9f962f8cfddf2f976ffae988c48dd7b3}{M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA}, 
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba399904f026dcac4eecf2a0540bb44ae3}{M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL}, 
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5baa39a1780487fe7e36fdb19f626295dc7}{C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS}, 
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bab65857ca9606cbee5e5d80da354a85dc}{R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO}, 
+\newline
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bac99738da68a5ce747fbb9cc8e279fd62}{S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG}
+ \}
+\item 
+enum \hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}{menu\+\_\+config\+\_\+t} \{ \newline
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a06d8faa02e79a9a6fbda9d2cd2440194}{M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE}, 
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53ab6e2020c69a0e91ebc81f83e9a38ac84}{M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE}, 
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aebf2dc77e049c39e1e391b6201311b5b}{M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS}, 
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a75ecf80a9fbf9d9ecbdbd7a695206ef3}{M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD}, 
+\newline
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aec3bb36b53f60016711c9476c88451c6}{M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Bobinadora_8c_ab0e32007633c5e09e0bcb67ea633162e}{Bobinadora\+M\+E\+F\+Init} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a8175ffe1f3bb0841b9b1eff5a1c94321}{Bobinadora\+M\+E\+F\+Update} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a29f987c704a784e5f014ff8179b232d5}{Mensaje\+Bienvenida} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a3fdc7f01195c6d5cbc477158bd7ca377}{Menu\+Config\+General} (void)
+\item 
+void \hyperlink{Bobinadora_8c_acca345a68028a9fb4a3f2568e3c77082}{Inicia\+Bobinado} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a410e30918e540f056a68a0e38ba51f38}{Repetir\+Bobinado} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a3ebe944137868e43ae859196440a3b09}{Control\+Motor\+P\+AP} (uint32\+\_\+t vel\+\_\+paso, bool\+\_\+t dir\+\_\+giro)
+\item 
+void \hyperlink{Bobinadora_8c_a4155c20a7c8ea1e6578c9eb3cb64788b}{Control\+Motor\+Bobinador} (uint8\+\_\+t Duty)
+\item 
+bool\+\_\+t \hyperlink{Bobinadora_8c_a48db066ce37d3aea4afecbc84d0cc2b2}{Lectura\+Sensor} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a1c8ae46921c4ae7d57bd44dd994e10bd}{pwm\+Init} (void)
+\item 
+void \hyperlink{Bobinadora_8c_a414ec0474daa68be4db1a13fb222af1d}{Soft\+Start\+Motor\+Bobinador} (void)
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_a8df2c2d57bccff28d4325c50e8fa1d08}{char2int} (char $\ast$array, uint8\+\_\+t n)
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_afb7e346c41956a7cdf95ae58d4c4a560}{Keypad\+To\+Int} (uint16\+\_\+t tecla\+Presionada)
+\item 
+int \hyperlink{Bobinadora_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+delay\+\_\+t \hyperlink{Bobinadora_8c_ad1f9cde30dfd78abc04ed2451453aff8}{Delay100ms}
+\item 
+delay\+\_\+t \hyperlink{Bobinadora_8c_a9ecc76e4f48f5ca9b35c6b1ea07967e4}{Delay1}
+\item 
+delay\+\_\+t \hyperlink{Bobinadora_8c_a9a0124289264af95e257837659a2166f}{Delay2}
+\item 
+delay\+\_\+t \hyperlink{Bobinadora_8c_a7306758f1cf47c1b7f4a04bb325cc0f8}{Delay3}
+\item 
+\hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}{bob\+\_\+state\+\_\+t} \hyperlink{Bobinadora_8c_aa54c7d43e3c209f419f10b3891880fe8}{Bobinador\+State}
+\item 
+\hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}{menu\+\_\+config\+\_\+t} \hyperlink{Bobinadora_8c_a2f0dfd4b3216111a20a0953d40f2b243}{Menu\+Config\+State}
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_a64be29a929b9d7e3152d492b417708b8}{diametro} = 0
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_a219c70f67475a06ecf916f8ae3de8183}{longitud} = 0
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_a7484bdab56226eaaf6d4548369a2e9e1}{cantidad\+\_\+espiras} = 0
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_ac75cd1b06233155dadf676b1df096235}{cantidad\+\_\+capas} = 0
+\item 
+uint16\+\_\+t \hyperlink{Bobinadora_8c_af59078ab0c81548fc9b3a318d98ce3e9}{velocidad} = 0
+\item 
+uint8\+\_\+t \hyperlink{Bobinadora_8c_a998733fd58c9eee206769be01724337f}{valor\+P\+WM} = 50
+\item 
+char \hyperlink{Bobinadora_8c_a4fec5650aeba9a1f64fe4aa2b175c015}{conv\+\_\+table} \mbox{[}$\,$\mbox{]}
+\item 
+keypad\+\_\+t \hyperlink{Bobinadora_8c_afb8a5970bf6c050d954a3bc70650ce57}{keypad}
+\item 
+uint8\+\_\+t \hyperlink{Bobinadora_8c_abc8418e1d81972da006d6ab5c482e2df}{keypad\+Row\+Pins1} \mbox{[}4\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{Bobinadora_8c_ac186c03603e0a06b2c1df01812091447}{keypad\+Col\+Pins1} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de los \textquotesingle{}defines\textquotesingle{}}
+\mbox{\Hypertarget{Bobinadora_8c_aabf9c516001d8e5c7c9e593e5a25d249}\label{Bobinadora_8c_aabf9c516001d8e5c7c9e593e5a25d249}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!D\+E\+R\+E\+C\+HA@{D\+E\+R\+E\+C\+HA}}
+\index{D\+E\+R\+E\+C\+HA@{D\+E\+R\+E\+C\+HA}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{D\+E\+R\+E\+C\+HA}{DERECHA}}
+{\footnotesize\ttfamily \#define D\+E\+R\+E\+C\+HA~1}
+
+
+
+Definición en la línea 5 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_ad9ef6961fb41b000be06f50ff545f55d}\label{Bobinadora_8c_ad9ef6961fb41b000be06f50ff545f55d}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!I\+Z\+Q\+U\+I\+E\+R\+DA@{I\+Z\+Q\+U\+I\+E\+R\+DA}}
+\index{I\+Z\+Q\+U\+I\+E\+R\+DA@{I\+Z\+Q\+U\+I\+E\+R\+DA}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{I\+Z\+Q\+U\+I\+E\+R\+DA}{IZQUIERDA}}
+{\footnotesize\ttfamily \#define I\+Z\+Q\+U\+I\+E\+R\+DA~0}
+
+
+
+Definición en la línea 6 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_aad28fddcc33bb99bff17d2c95f1ee28a}\label{Bobinadora_8c_aad28fddcc33bb99bff17d2c95f1ee28a}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES@{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES}}
+\index{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES@{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES}{MAX\_DIGITOS\_EN\_VALORES}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES~7}
+
+
+
+Definición en la línea 2 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Keypad\+To\+Int() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_ab141c2f4969ddb17459e008d7062cc42}\label{Bobinadora_8c_ab141c2f4969ddb17459e008d7062cc42}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE@{M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE}}
+\index{M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE@{M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE}{MAX\_PULSOS\_AVANCE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE~46080}
+
+
+
+Definición en la línea 3 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado().
+
+
+
+\subsection{Documentación de las enumeraciones}
+\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!bob\+\_\+state\+\_\+t@{bob\+\_\+state\+\_\+t}}
+\index{bob\+\_\+state\+\_\+t@{bob\+\_\+state\+\_\+t}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{bob\+\_\+state\+\_\+t}{bob\_state\_t}}
+{\footnotesize\ttfamily enum \hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}{bob\+\_\+state\+\_\+t}}
+
+Estados de la maquina Bobinadora \begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA@{M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA@{M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA}}}\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba9f962f8cfddf2f976ffae988c48dd7b3}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba9f962f8cfddf2f976ffae988c48dd7b3}} 
+M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA&Mensaje inicial de Bienvenida. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL@{M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL@{M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL}}}\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba399904f026dcac4eecf2a0540bb44ae3}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5ba399904f026dcac4eecf2a0540bb44ae3}} 
+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL&Estado de presentacion de menus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS@{C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS@{C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS}}}\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5baa39a1780487fe7e36fdb19f626295dc7}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5baa39a1780487fe7e36fdb19f626295dc7}} 
+C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS&Estado de control de motores y sensor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO@{R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO@{R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO}}}\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bab65857ca9606cbee5e5d80da354a85dc}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bab65857ca9606cbee5e5d80da354a85dc}} 
+R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO&Estado de repeticion de bobinado previo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG@{S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG@{S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG}}}\mbox{\Hypertarget{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bac99738da68a5ce747fbb9cc8e279fd62}\label{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5bac99738da68a5ce747fbb9cc8e279fd62}} 
+S\+U\+B\+\_\+\+M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+IG&Estado de sub menu -\/no implementado-\/. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea 22 del archivo Bobinadora.\+c.
+
+\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!menu\+\_\+config\+\_\+t@{menu\+\_\+config\+\_\+t}}
+\index{menu\+\_\+config\+\_\+t@{menu\+\_\+config\+\_\+t}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{menu\+\_\+config\+\_\+t}{menu\_config\_t}}
+{\footnotesize\ttfamily enum \hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}{menu\+\_\+config\+\_\+t}}
+
+Estados del menu de configuracion \begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE@{M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE@{M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE}}}\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a06d8faa02e79a9a6fbda9d2cd2440194}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a06d8faa02e79a9a6fbda9d2cd2440194}} 
+M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE&Estado de Menu de ingreso diametro alambre. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE@{M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE@{M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE}}}\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53ab6e2020c69a0e91ebc81f83e9a38ac84}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53ab6e2020c69a0e91ebc81f83e9a38ac84}} 
+M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE&Estado de Menu de ingreso longitud del carrete. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS@{M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS@{M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS}}}\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aebf2dc77e049c39e1e391b6201311b5b}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aebf2dc77e049c39e1e391b6201311b5b}} 
+M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS&Estado de Menu de ingreso cantidad de espiras. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD@{M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD@{M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD}}}\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a75ecf80a9fbf9d9ecbdbd7a695206ef3}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53a75ecf80a9fbf9d9ecbdbd7a695206ef3}} 
+M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD&Estado de Menu de ingreso velocidad P\+WM inicial bobinado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA@{M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA}!Bobinadora.\+c@{Bobinadora.\+c}}\index{Bobinadora.\+c@{Bobinadora.\+c}!M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA@{M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA}}}\mbox{\Hypertarget{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aec3bb36b53f60016711c9476c88451c6}\label{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53aec3bb36b53f60016711c9476c88451c6}} 
+M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA&M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definición en la línea 35 del archivo Bobinadora.\+c.
+
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{Bobinadora_8c_ab0e32007633c5e09e0bcb67ea633162e}\label{Bobinadora_8c_ab0e32007633c5e09e0bcb67ea633162e}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Bobinadora\+M\+E\+F\+Init@{Bobinadora\+M\+E\+F\+Init}}
+\index{Bobinadora\+M\+E\+F\+Init@{Bobinadora\+M\+E\+F\+Init}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Bobinadora\+M\+E\+F\+Init()}{BobinadoraMEFInit()}}
+{\footnotesize\ttfamily void Bobinadora\+M\+E\+F\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Inicializa la M\+EF de la bobinadora 
+
+Definición en la línea 130 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinador\+State, M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL, M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE y Menu\+Config\+State.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{Bobinadora_8c_a8175ffe1f3bb0841b9b1eff5a1c94321}\label{Bobinadora_8c_a8175ffe1f3bb0841b9b1eff5a1c94321}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Bobinadora\+M\+E\+F\+Update@{Bobinadora\+M\+E\+F\+Update}}
+\index{Bobinadora\+M\+E\+F\+Update@{Bobinadora\+M\+E\+F\+Update}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Bobinadora\+M\+E\+F\+Update()}{BobinadoraMEFUpdate()}}
+{\footnotesize\ttfamily void Bobinadora\+M\+E\+F\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Actualiza el estado de la M\+EF de la bobinadora 
+
+Definición en la línea 140 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinador\+State, C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS, Inicia\+Bobinado(), M\+E\+N\+S\+A\+J\+E\+\_\+\+B\+I\+E\+N\+V\+E\+N\+I\+DA, Mensaje\+Bienvenida(), M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL, Menu\+Config\+General(), R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO y Repetir\+Bobinado().
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{Bobinadora_8c_a8df2c2d57bccff28d4325c50e8fa1d08}\label{Bobinadora_8c_a8df2c2d57bccff28d4325c50e8fa1d08}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!char2int@{char2int}}
+\index{char2int@{char2int}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{char2int()}{char2int()}}
+{\footnotesize\ttfamily uint16\+\_\+t char2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{array,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Rutina Generica para convertir de arreglo a entero 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Arreglo a convertir \\
+\hline
+{\em n} & Largo del arreglo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+valor entero convertido desde el arreglo 
+\end{DoxyReturn}
+
+
+Definición en la línea 570 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Keypad\+To\+Int().
+
+\mbox{\Hypertarget{Bobinadora_8c_a4155c20a7c8ea1e6578c9eb3cb64788b}\label{Bobinadora_8c_a4155c20a7c8ea1e6578c9eb3cb64788b}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Control\+Motor\+Bobinador@{Control\+Motor\+Bobinador}}
+\index{Control\+Motor\+Bobinador@{Control\+Motor\+Bobinador}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Control\+Motor\+Bobinador()}{ControlMotorBobinador()}}
+{\footnotesize\ttfamily void Control\+Motor\+Bobinador (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Duty }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 639 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado() y Soft\+Start\+Motor\+Bobinador().
+
+\mbox{\Hypertarget{Bobinadora_8c_a3ebe944137868e43ae859196440a3b09}\label{Bobinadora_8c_a3ebe944137868e43ae859196440a3b09}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Control\+Motor\+P\+AP@{Control\+Motor\+P\+AP}}
+\index{Control\+Motor\+P\+AP@{Control\+Motor\+P\+AP}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Control\+Motor\+P\+A\+P()}{ControlMotorPAP()}}
+{\footnotesize\ttfamily void Control\+Motor\+P\+AP (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{vel\+\_\+paso,  }\item[{bool\+\_\+t}]{dir\+\_\+giro }\end{DoxyParamCaption})}
+
+Funcion de control del motor paso a paso 
+\begin{DoxyParams}{Parámetros}
+{\em vel\+\_\+paso} & Periodo entre pulsos de control \\
+\hline
+{\em dir\+\_\+giro} & Direccion de giro \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 621 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_acca345a68028a9fb4a3f2568e3c77082}\label{Bobinadora_8c_acca345a68028a9fb4a3f2568e3c77082}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Inicia\+Bobinado@{Inicia\+Bobinado}}
+\index{Inicia\+Bobinado@{Inicia\+Bobinado}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Inicia\+Bobinado()}{IniciaBobinado()}}
+{\footnotesize\ttfamily void Inicia\+Bobinado (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Controla los motores durante la secuencia de bobinado Controla la cantidad de avance,vueltas,capas, etc Controlo la cantidad de vueltas y el avance de alambre, si se vuelve falso alguna paro el bobinado y asumo se termino\+: hago otro?
+
+Si llegue al maximo numero de pulsos en una direccion reinicio y cambio el sentido
+
+Lectura del sensor -\/hall
+
+Parar la secuencia de bobinado
+
+Definición en la línea 427 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinador\+State, cantidad\+\_\+espiras, Control\+Motor\+Bobinador(), Control\+Motor\+P\+A\+P(), conv\+\_\+table, Delay1, Delay100ms, D\+E\+R\+E\+C\+HA, I\+Z\+Q\+U\+I\+E\+R\+DA, keypad, L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dset\+Cursor(), Lectura\+Sensor(), M\+A\+X\+\_\+\+P\+U\+L\+S\+O\+S\+\_\+\+A\+V\+A\+N\+CE, M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL, R\+E\+P\+E\+T\+I\+R\+\_\+\+B\+O\+B\+I\+N\+A\+DO y Soft\+Start\+Motor\+Bobinador().
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Update().
+
+\mbox{\Hypertarget{Bobinadora_8c_afb7e346c41956a7cdf95ae58d4c4a560}\label{Bobinadora_8c_afb7e346c41956a7cdf95ae58d4c4a560}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Keypad\+To\+Int@{Keypad\+To\+Int}}
+\index{Keypad\+To\+Int@{Keypad\+To\+Int}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Keypad\+To\+Int()}{KeypadToInt()}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+To\+Int (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{tecla\+Presionada }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tecla\+Presionada} & Desde el teclado convierte los valores presionados a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+regresa un entero equivalente hasta la introduccion de \textquotesingle{}\#\textquotesingle{} 
+\end{DoxyReturn}
+
+
+Definición en la línea 600 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a char2int(), conv\+\_\+table y M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES.
+
+
+
+Referenciado por Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_a48db066ce37d3aea4afecbc84d0cc2b2}\label{Bobinadora_8c_a48db066ce37d3aea4afecbc84d0cc2b2}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Lectura\+Sensor@{Lectura\+Sensor}}
+\index{Lectura\+Sensor@{Lectura\+Sensor}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Lectura\+Sensor()}{LecturaSensor()}}
+{\footnotesize\ttfamily bool\+\_\+t Lectura\+Sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Leo el sensor Hall (analogico) por el A/D filtro y devuelvo booleano de nivel/flanco \begin{DoxyReturn}{Devuelve}
+Flanco devuelve el estado del flanco del sensor 
+\end{DoxyReturn}
+
+
+Definición en la línea 657 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{Bobinadora_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!main@{main}}
+\index{main@{main}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 94 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinadora\+M\+E\+F\+Init(), Bobinadora\+M\+E\+F\+Update(), Delay1, Delay100ms, Delay2, Delay3, keypad, keypad\+Col\+Pins1, keypad\+Row\+Pins1, L\+C\+D\+\_\+\+Init() y pwm\+Init().
+
+\mbox{\Hypertarget{Bobinadora_8c_a29f987c704a784e5f014ff8179b232d5}\label{Bobinadora_8c_a29f987c704a784e5f014ff8179b232d5}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Mensaje\+Bienvenida@{Mensaje\+Bienvenida}}
+\index{Mensaje\+Bienvenida@{Mensaje\+Bienvenida}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Mensaje\+Bienvenida()}{MensajeBienvenida()}}
+{\footnotesize\ttfamily void Mensaje\+Bienvenida (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Mensaje inicial de bienvenida al sistema 
+
+Definición en la línea 164 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dbacklight(), L\+C\+Dblink\+Off(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dno\+Backlight() y L\+C\+Dset\+Cursor().
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Update().
+
+\mbox{\Hypertarget{Bobinadora_8c_a3fdc7f01195c6d5cbc477158bd7ca377}\label{Bobinadora_8c_a3fdc7f01195c6d5cbc477158bd7ca377}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Menu\+Config\+General@{Menu\+Config\+General}}
+\index{Menu\+Config\+General@{Menu\+Config\+General}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Menu\+Config\+General()}{MenuConfigGeneral()}}
+{\footnotesize\ttfamily void Menu\+Config\+General (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Posicionamiento del H\+O\+ME de primera espira con el motor stepper Se activan leds como indicadores de estado
+
+Definición en la línea 188 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinador\+State, cantidad\+\_\+capas, cantidad\+\_\+espiras, C\+O\+N\+T\+R\+O\+L\+\_\+\+V\+U\+E\+L\+T\+AS, Control\+Motor\+P\+A\+P(), conv\+\_\+table, Delay1, Delay100ms, Delay2, diametro, keypad, Keypad\+To\+Int(), L\+C\+D\+\_\+\+Write\+\_\+\+Char(), L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dblink\+Off(), L\+C\+Dblink\+On(), L\+C\+Dclear(), L\+C\+Dcursor\+Off(), L\+C\+Dset\+Cursor(), longitud, M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+O\+S\+\_\+\+E\+N\+\_\+\+V\+A\+L\+O\+R\+ES, M\+E\+N\+U\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+E\+S\+P\+I\+R\+AS, M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE, M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA, M\+E\+N\+U\+\_\+\+L\+O\+N\+G\+I\+T\+U\+D\+\_\+\+C\+A\+R\+R\+E\+TE, M\+E\+N\+U\+\_\+\+V\+E\+L\+O\+C\+I\+D\+AD, Menu\+Config\+State y velocidad.
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Update().
+
+\mbox{\Hypertarget{Bobinadora_8c_a1c8ae46921c4ae7d57bd44dd994e10bd}\label{Bobinadora_8c_a1c8ae46921c4ae7d57bd44dd994e10bd}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!pwm\+Init@{pwm\+Init}}
+\index{pwm\+Init@{pwm\+Init}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{pwm\+Init()}{pwmInit()}}
+{\footnotesize\ttfamily void pwm\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 644 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{Bobinadora_8c_a410e30918e540f056a68a0e38ba51f38}\label{Bobinadora_8c_a410e30918e540f056a68a0e38ba51f38}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Repetir\+Bobinado@{Repetir\+Bobinado}}
+\index{Repetir\+Bobinado@{Repetir\+Bobinado}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Repetir\+Bobinado()}{RepetirBobinado()}}
+{\footnotesize\ttfamily void Repetir\+Bobinado (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 523 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Bobinador\+State, conv\+\_\+table, Delay100ms, keypad, L\+C\+D\+\_\+\+Write\+\_\+\+Str(), L\+C\+Dclear(), L\+C\+Dset\+Cursor(), M\+E\+N\+U\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+G\+R\+AL, M\+E\+N\+U\+\_\+\+D\+I\+A\+M\+E\+T\+R\+O\+\_\+\+A\+L\+A\+M\+B\+RE, M\+E\+N\+U\+\_\+\+H\+O\+M\+E\+\_\+\+S\+E\+T\+\_\+\+P\+R\+I\+M\+E\+R\+A\+\_\+\+E\+S\+P\+I\+RA, Menu\+Config\+State y valor\+P\+WM.
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Update().
+
+\mbox{\Hypertarget{Bobinadora_8c_a414ec0474daa68be4db1a13fb222af1d}\label{Bobinadora_8c_a414ec0474daa68be4db1a13fb222af1d}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Soft\+Start\+Motor\+Bobinador@{Soft\+Start\+Motor\+Bobinador}}
+\index{Soft\+Start\+Motor\+Bobinador@{Soft\+Start\+Motor\+Bobinador}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Soft\+Start\+Motor\+Bobinador()}{SoftStartMotorBobinador()}}
+{\footnotesize\ttfamily void Soft\+Start\+Motor\+Bobinador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 553 del archivo Bobinadora.\+c.
+
+
+
+Hace referencia a Control\+Motor\+Bobinador(), Delay3 y valor\+P\+WM.
+
+
+
+Referenciado por Inicia\+Bobinado().
+
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{Bobinadora_8c_aa54c7d43e3c209f419f10b3891880fe8}\label{Bobinadora_8c_aa54c7d43e3c209f419f10b3891880fe8}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Bobinador\+State@{Bobinador\+State}}
+\index{Bobinador\+State@{Bobinador\+State}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Bobinador\+State}{BobinadorState}}
+{\footnotesize\ttfamily \hyperlink{Bobinadora_8c_a3c10325a2e400a6d0cc9987638ad4a5b}{bob\+\_\+state\+\_\+t} Bobinador\+State}
+
+
+
+Definición en la línea 47 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Init(), Bobinadora\+M\+E\+F\+Update(), Inicia\+Bobinado(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_ac75cd1b06233155dadf676b1df096235}\label{Bobinadora_8c_ac75cd1b06233155dadf676b1df096235}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!cantidad\+\_\+capas@{cantidad\+\_\+capas}}
+\index{cantidad\+\_\+capas@{cantidad\+\_\+capas}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{cantidad\+\_\+capas}{cantidad\_capas}}
+{\footnotesize\ttfamily uint16\+\_\+t cantidad\+\_\+capas = 0}
+
+
+
+Definición en la línea 52 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_a7484bdab56226eaaf6d4548369a2e9e1}\label{Bobinadora_8c_a7484bdab56226eaaf6d4548369a2e9e1}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!cantidad\+\_\+espiras@{cantidad\+\_\+espiras}}
+\index{cantidad\+\_\+espiras@{cantidad\+\_\+espiras}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{cantidad\+\_\+espiras}{cantidad\_espiras}}
+{\footnotesize\ttfamily uint16\+\_\+t cantidad\+\_\+espiras = 0}
+
+
+
+Definición en la línea 51 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_a4fec5650aeba9a1f64fe4aa2b175c015}\label{Bobinadora_8c_a4fec5650aeba9a1f64fe4aa2b175c015}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!conv\+\_\+table@{conv\+\_\+table}}
+\index{conv\+\_\+table@{conv\+\_\+table}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{conv\+\_\+table}{conv\_table}}
+{\footnotesize\ttfamily char conv\+\_\+table\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+= \{ \textcolor{charliteral}{'1'}, \textcolor{charliteral}{'2'}, \textcolor{charliteral}{'3'}, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'4'}, \textcolor{charliteral}{'5'}, \textcolor{charliteral}{'6'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'7'}, \textcolor{charliteral}{'8'}, \textcolor{charliteral}{'9'},
+        \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'*'}, \textcolor{charliteral}{'0'}, \textcolor{charliteral}{'#'}, \textcolor{charliteral}{','} \}
+\end{DoxyCode}
+
+
+Definición en la línea 55 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado(), Keypad\+To\+Int(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_a9ecc76e4f48f5ca9b35c6b1ea07967e4}\label{Bobinadora_8c_a9ecc76e4f48f5ca9b35c6b1ea07967e4}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Delay1@{Delay1}}
+\index{Delay1@{Delay1}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Delay1}{Delay1}}
+{\footnotesize\ttfamily delay\+\_\+t Delay1}
+
+
+
+Definición en la línea 45 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado(), main() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_ad1f9cde30dfd78abc04ed2451453aff8}\label{Bobinadora_8c_ad1f9cde30dfd78abc04ed2451453aff8}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Delay100ms@{Delay100ms}}
+\index{Delay100ms@{Delay100ms}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Delay100ms}{Delay100ms}}
+{\footnotesize\ttfamily delay\+\_\+t Delay100ms}
+
+
+
+Definición en la línea 44 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado(), main(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_a9a0124289264af95e257837659a2166f}\label{Bobinadora_8c_a9a0124289264af95e257837659a2166f}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Delay2@{Delay2}}
+\index{Delay2@{Delay2}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Delay2}{Delay2}}
+{\footnotesize\ttfamily delay\+\_\+t Delay2}
+
+
+
+Definición en la línea 45 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por main() y Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_a7306758f1cf47c1b7f4a04bb325cc0f8}\label{Bobinadora_8c_a7306758f1cf47c1b7f4a04bb325cc0f8}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Delay3@{Delay3}}
+\index{Delay3@{Delay3}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Delay3}{Delay3}}
+{\footnotesize\ttfamily delay\+\_\+t Delay3}
+
+
+
+Definición en la línea 45 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por main() y Soft\+Start\+Motor\+Bobinador().
+
+\mbox{\Hypertarget{Bobinadora_8c_a64be29a929b9d7e3152d492b417708b8}\label{Bobinadora_8c_a64be29a929b9d7e3152d492b417708b8}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!diametro@{diametro}}
+\index{diametro@{diametro}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{diametro}{diametro}}
+{\footnotesize\ttfamily uint16\+\_\+t diametro = 0}
+
+
+
+Definición en la línea 49 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_afb8a5970bf6c050d954a3bc70650ce57}\label{Bobinadora_8c_afb8a5970bf6c050d954a3bc70650ce57}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!keypad@{keypad}}
+\index{keypad@{keypad}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{keypad}{keypad}}
+{\footnotesize\ttfamily keypad\+\_\+t keypad}
+
+
+
+Definición en la línea 58 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Inicia\+Bobinado(), main(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_ac186c03603e0a06b2c1df01812091447}\label{Bobinadora_8c_ac186c03603e0a06b2c1df01812091447}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!keypad\+Col\+Pins1@{keypad\+Col\+Pins1}}
+\index{keypad\+Col\+Pins1@{keypad\+Col\+Pins1}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{keypad\+Col\+Pins1}{keypadColPins1}}
+{\footnotesize\ttfamily uint8\+\_\+t keypad\+Col\+Pins1\mbox{[}4\mbox{]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+= \{ T\_FIL0,    
+        T\_FIL3,    
+        T\_FIL2,    
+        T\_COL0     
+        \}
+\end{DoxyCode}
+
+
+Definición en la línea 68 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{Bobinadora_8c_abc8418e1d81972da006d6ab5c482e2df}\label{Bobinadora_8c_abc8418e1d81972da006d6ab5c482e2df}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!keypad\+Row\+Pins1@{keypad\+Row\+Pins1}}
+\index{keypad\+Row\+Pins1@{keypad\+Row\+Pins1}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{keypad\+Row\+Pins1}{keypadRowPins1}}
+{\footnotesize\ttfamily uint8\+\_\+t keypad\+Row\+Pins1\mbox{[}4\mbox{]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+= \{ RS232\_TXD, 
+        CAN\_RD,    
+        CAN\_TD,    
+        T\_COL1     
+        \}
+\end{DoxyCode}
+
+
+Definición en la línea 61 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{Bobinadora_8c_a219c70f67475a06ecf916f8ae3de8183}\label{Bobinadora_8c_a219c70f67475a06ecf916f8ae3de8183}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!longitud@{longitud}}
+\index{longitud@{longitud}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{longitud}{longitud}}
+{\footnotesize\ttfamily uint16\+\_\+t longitud = 0}
+
+
+
+Definición en la línea 50 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Menu\+Config\+General().
+
+\mbox{\Hypertarget{Bobinadora_8c_a2f0dfd4b3216111a20a0953d40f2b243}\label{Bobinadora_8c_a2f0dfd4b3216111a20a0953d40f2b243}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!Menu\+Config\+State@{Menu\+Config\+State}}
+\index{Menu\+Config\+State@{Menu\+Config\+State}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{Menu\+Config\+State}{MenuConfigState}}
+{\footnotesize\ttfamily \hyperlink{Bobinadora_8c_a7a2f2c1eda9e7dc0e5b32b8871f2bc53}{menu\+\_\+config\+\_\+t} Menu\+Config\+State}
+
+
+
+Definición en la línea 48 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Bobinadora\+M\+E\+F\+Init(), Menu\+Config\+General() y Repetir\+Bobinado().
+
+\mbox{\Hypertarget{Bobinadora_8c_a998733fd58c9eee206769be01724337f}\label{Bobinadora_8c_a998733fd58c9eee206769be01724337f}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!valor\+P\+WM@{valor\+P\+WM}}
+\index{valor\+P\+WM@{valor\+P\+WM}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{valor\+P\+WM}{valorPWM}}
+{\footnotesize\ttfamily uint8\+\_\+t valor\+P\+WM = 50}
+
+
+
+Definición en la línea 54 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Repetir\+Bobinado() y Soft\+Start\+Motor\+Bobinador().
+
+\mbox{\Hypertarget{Bobinadora_8c_af59078ab0c81548fc9b3a318d98ce3e9}\label{Bobinadora_8c_af59078ab0c81548fc9b3a318d98ce3e9}} 
+\index{Bobinadora.\+c@{Bobinadora.\+c}!velocidad@{velocidad}}
+\index{velocidad@{velocidad}!Bobinadora.\+c@{Bobinadora.\+c}}
+\subsubsection{\texorpdfstring{velocidad}{velocidad}}
+{\footnotesize\ttfamily uint16\+\_\+t velocidad = 0}
+
+
+
+Definición en la línea 53 del archivo Bobinadora.\+c.
+
+
+
+Referenciado por Menu\+Config\+General().
+
